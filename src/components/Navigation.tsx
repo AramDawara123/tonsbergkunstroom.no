@@ -45,7 +45,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -64,10 +64,10 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - Now visible on tablet and mobile */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 rounded-xl nordic-glass text-foreground hover:text-primary transition-colors"
+            className="lg:hidden p-3 rounded-xl bg-white/10 backdrop-blur-sm text-foreground hover:text-primary transition-colors"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -75,8 +75,8 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-6 pb-6">
-            <div className="nordic-card p-6">
+          <div className="lg:hidden mt-6 pb-6">
+            <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Link

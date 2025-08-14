@@ -25,16 +25,10 @@ const ArtistSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-background via-nordic-birch/50 to-nordic-ice/30">
-      {/* Modern Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-nordic-sage/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-nordic-sky/10 to-transparent rounded-full blur-2xl" />
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-24 bg-muted">
+      <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-          {/* Content Section - Now First */}
+          {/* Content Section */}
           <div className="space-y-8 lg:order-1">
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium border border-primary/20">
@@ -67,18 +61,18 @@ const ArtistSection = () => {
               </p>
             </div>
 
-            {/* Achievement Cards - Compact Grid */}
-            <div className="grid grid-cols-1 gap-4">
+            {/* Achievement Cards - Modern Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-xl p-5 bg-white/60 backdrop-blur-sm border border-white/20 hover:bg-white/80 transition-all duration-300 cursor-pointer"
+                  className="group relative overflow-hidden rounded-2xl p-6 bg-white/80 backdrop-blur-sm border border-white/20 hover:bg-white/90 transition-all duration-300 cursor-pointer text-center"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-br ${achievement.color} text-white shadow-sm`}>
+                  <div className="space-y-3">
+                    <div className={`w-12 h-12 mx-auto rounded-xl bg-gradient-to-br ${achievement.color} text-white shadow-sm flex items-center justify-center`}>
                       {achievement.icon}
                     </div>
-                    <div className="flex-1">
+                    <div>
                       <h3 className="text-xl font-semibold text-foreground mb-1">
                         {achievement.title}
                       </h3>
@@ -86,7 +80,6 @@ const ArtistSection = () => {
                         {achievement.description}
                       </p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </div>
               ))}
@@ -101,7 +94,7 @@ const ArtistSection = () => {
             </div>
           </div>
 
-          {/* Image Section - Now Second */}
+          {/* Image Section */}
           <div className="relative lg:order-2">
             <div className="relative group">
               {/* Main Image */}
@@ -109,7 +102,7 @@ const ArtistSection = () => {
                 <img
                   src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1940&q=80"
                   alt="Artist at work"
-                  className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[500px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
@@ -126,10 +119,6 @@ const ArtistSection = () => {
               <div className="absolute -top-4 -right-4 bg-gradient-to-r from-secondary to-nordic-sage text-white rounded-full p-4 shadow-lg">
                 <Award className="w-6 h-6" />
               </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-nordic-sky/20 to-nordic-deep/20 rounded-2xl -z-10 rotate-12" />
-              <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-nordic-sage/15 to-transparent rounded-full -z-10" />
             </div>
           </div>
         </div>
