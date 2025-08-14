@@ -13,7 +13,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center z-10 relative">
         <div className="max-w-5xl mx-auto space-y-12">
           {/* Badge */}
-          
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full nordic-glass text-primary font-medium animate-nordic-fade-up">
+            <Sparkles className="w-4 h-4" />
+            <span>Contemporary Nordic Art</span>
+          </div>
 
           <div className="space-y-8">
             <h1 className="nordic-display animate-nordic-fade-up" style={{
