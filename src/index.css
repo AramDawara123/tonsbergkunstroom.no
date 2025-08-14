@@ -1,105 +1,129 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Nordic Art Studio Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Nordic Palette - HSL only */
+    --nordic-ice: 195 35% 92%;        /* Soft glacier blue */
+    --nordic-mist: 195 20% 85%;       /* Light blue-gray */
+    --nordic-sky: 195 45% 75%;        /* Nordic blue */
+    --nordic-deep: 195 60% 25%;       /* Deep nordic blue */
+    
+    --nordic-sage: 135 25% 70%;       /* Soft sage green */
+    --nordic-forest: 135 30% 45%;     /* Forest green */
+    --nordic-pine: 135 40% 25%;       /* Deep forest */
+    
+    --nordic-birch: 40 30% 95%;       /* Warm birch beige */
+    --nordic-linen: 40 20% 90%;       /* Natural linen */
+    --nordic-sand: 40 25% 80%;        /* Warm sand */
+    
+    --nordic-charcoal: 200 15% 18%;   /* Dark charcoal */
+    --nordic-stone: 200 10% 35%;      /* Medium stone */
+    --nordic-ash: 200 8% 55%;         /* Light ash */
 
+    /* Semantic Design Tokens */
+    --background: var(--nordic-birch);
+    --foreground: var(--nordic-charcoal);
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: var(--nordic-charcoal);
+    --primary: var(--nordic-deep);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--nordic-sage);
+    --secondary-foreground: var(--nordic-charcoal);
+    --muted: var(--nordic-linen);
+    --muted-foreground: var(--nordic-stone);
+    --accent: var(--nordic-sky);
+    --accent-foreground: var(--nordic-charcoal);
+    --border: var(--nordic-mist);
+    --input: var(--nordic-mist);
+    --ring: var(--nordic-sky);
+    --radius: 0.75rem;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    /* Nordic Typography Scale */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Nordic Typography Classes */
+  .nordic-display {
+    font-family: var(--font-display);
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
+    color: hsl(var(--nordic-charcoal));
+  }
+
+  .nordic-heading {
+    font-family: var(--font-display);
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug;
+    color: hsl(var(--nordic-charcoal));
+  }
+
+  .nordic-subtitle {
+    @apply text-lg md:text-xl font-medium leading-relaxed;
+    color: hsl(var(--nordic-stone));
+  }
+
+  .nordic-body {
+    @apply text-base leading-relaxed;
+    color: hsl(var(--nordic-stone));
+  }
+
+  /* Nordic Component Variants */
+  .nordic-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-xl font-medium transition-all duration-300;
+    box-shadow: 0 4px 20px hsl(var(--nordic-deep) / 0.2);
+  }
+
+  .nordic-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-xl font-medium transition-all duration-300;
+    box-shadow: 0 4px 20px hsl(var(--nordic-sage) / 0.2);
+  }
+
+  .nordic-button-ghost {
+    @apply text-primary hover:bg-primary/10 px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .nordic-card {
+    @apply bg-card rounded-2xl shadow-lg border border-border overflow-hidden;
+    box-shadow: 0 10px 40px hsl(var(--nordic-charcoal) / 0.1);
+  }
+
+  /* Nordic Animations */
+  .nordic-fade-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .nordic-fade-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .nordic-hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .nordic-hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 20px 60px hsl(var(--nordic-charcoal) / 0.15);
+  }
+}
+
+/* Nordic Background Patterns */
+.nordic-texture {
+  background-image: 
+    radial-gradient(circle at 20% 80%, hsl(var(--nordic-ice) / 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(var(--nordic-sage) / 0.2) 0%, transparent 50%);
+}
+
+.nordic-gradient {
+  background: linear-gradient(135deg, 
+    hsl(var(--nordic-birch)) 0%, 
+    hsl(var(--nordic-linen)) 50%, 
+    hsl(var(--nordic-ice)) 100%);
 }

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,22 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Nordic Color Palette
+				'nordic-ice': 'hsl(var(--nordic-ice))',
+				'nordic-mist': 'hsl(var(--nordic-mist))',
+				'nordic-sky': 'hsl(var(--nordic-sky))',
+				'nordic-deep': 'hsl(var(--nordic-deep))',
+				'nordic-sage': 'hsl(var(--nordic-sage))',
+				'nordic-forest': 'hsl(var(--nordic-forest))',
+				'nordic-pine': 'hsl(var(--nordic-pine))',
+				'nordic-birch': 'hsl(var(--nordic-birch))',
+				'nordic-linen': 'hsl(var(--nordic-linen))',
+				'nordic-sand': 'hsl(var(--nordic-sand))',
+				'nordic-charcoal': 'hsl(var(--nordic-charcoal))',
+				'nordic-stone': 'hsl(var(--nordic-stone))',
+				'nordic-ash': 'hsl(var(--nordic-ash))',
+
+				// Semantic tokens
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -52,16 +69,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+			},
+			fontFamily: {
+				'display': ['Playfair Display', 'serif'],
+				'body': ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -69,24 +80,26 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				'nordic-fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(2rem)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'nordic-float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-0.5rem)' }
+				},
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				}
 			},
 			animation: {
+				'nordic-fade-up': 'nordic-fade-up 0.7s ease-out',
+				'nordic-float': 'nordic-float 3s ease-in-out infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
