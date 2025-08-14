@@ -1,17 +1,10 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-muted overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-muted overflow-hidden">
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80" 
-          alt="Nordic Art Studio" 
-          className="w-full h-full object-cover opacity-30" 
-        />
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80" alt="Nordic Art Studio" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-transparent to-primary/20" />
       </div>
 
@@ -61,11 +54,9 @@ const Hero = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-muted-foreground animate-bounce">
-          <ArrowDown className="w-6 h-6" />
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
