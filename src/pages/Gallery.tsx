@@ -1,65 +1,53 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Eye, Heart, Filter } from 'lucide-react';
-
 const Gallery = () => {
-  const artworks = [
-    {
-      id: 1,
-      title: "Aurora Dreams",
-      category: "Abstract",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "Inspired by the dancing northern lights over the Arctic landscape."
-    },
-    {
-      id: 2,
-      title: "Fjord Serenity",
-      category: "Landscape",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "The peaceful morning mist rising from ancient Norwegian fjords."
-    },
-    {
-      id: 3,
-      title: "Winter Solstice",
-      category: "Mixed Media",
-      year: "2023",
-      image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "Celebrating the longest night and the promise of returning light."
-    },
-    {
-      id: 4,
-      title: "Midnight Sun",
-      category: "Oil on Canvas",
-      year: "2023",
-      image: "https://images.unsplash.com/photo-1536924430914-91f9e2d76e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "The ethereal beauty of summer nights in the Arctic Circle."
-    },
-    {
-      id: 5,
-      title: "Forest Whispers",
-      category: "Watercolor",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "The ancient stories told by Norway's primeval forests."
-    },
-    {
-      id: 6,
-      title: "Coastal Harmony",
-      category: "Acrylic",
-      year: "2024",
-      image: "https://images.unsplash.com/photo-1582561833283-4a93960afab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      description: "Where the rugged coastline meets the endless Nordic seas."
-    }
-  ];
-
+  const artworks = [{
+    id: 1,
+    title: "Aurora Dreams",
+    category: "Abstract",
+    year: "2024",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "Inspired by the dancing northern lights over the Arctic landscape."
+  }, {
+    id: 2,
+    title: "Fjord Serenity",
+    category: "Landscape",
+    year: "2024",
+    image: "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "The peaceful morning mist rising from ancient Norwegian fjords."
+  }, {
+    id: 3,
+    title: "Winter Solstice",
+    category: "Mixed Media",
+    year: "2023",
+    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "Celebrating the longest night and the promise of returning light."
+  }, {
+    id: 4,
+    title: "Midnight Sun",
+    category: "Oil on Canvas",
+    year: "2023",
+    image: "https://images.unsplash.com/photo-1536924430914-91f9e2d76e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "The ethereal beauty of summer nights in the Arctic Circle."
+  }, {
+    id: 5,
+    title: "Forest Whispers",
+    category: "Watercolor",
+    year: "2024",
+    image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "The ancient stories told by Norway's primeval forests."
+  }, {
+    id: 6,
+    title: "Coastal Harmony",
+    category: "Acrylic",
+    year: "2024",
+    image: "https://images.unsplash.com/photo-1582561833283-4a93960afab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    description: "Where the rugged coastline meets the endless Nordic seas."
+  }];
   const categories = ["All", "Abstract", "Landscape", "Mixed Media", "Oil on Canvas", "Watercolor", "Acrylic"];
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Modern Header */}
@@ -68,10 +56,7 @@ const Gallery = () => {
         <div className="absolute inset-0 modern-grid opacity-20" />
         
         <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full nordic-glass text-primary font-medium mb-8">
-            <Eye className="w-4 h-4" />
-            <span>Complete Collection</span>
-          </div>
+          
           
           <h1 className="nordic-heading mb-6 leading-tight">Art Gallery</h1>
           <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed">
@@ -91,14 +76,9 @@ const Gallery = () => {
             </div>
             
             <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className="px-4 py-2 rounded-xl bg-white/50 hover:bg-white/80 text-muted-foreground hover:text-foreground transition-all duration-300 border border-white/20 hover:border-white/40"
-                >
+              {categories.map(category => <button key={category} className="px-4 py-2 rounded-xl bg-white/50 hover:bg-white/80 text-muted-foreground hover:text-foreground transition-all duration-300 border border-white/20 hover:border-white/40">
                   {category}
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
         </div>
@@ -108,18 +88,11 @@ const Gallery = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
-            {artworks.map((artwork, index) => (
-              <div
-                key={artwork.id}
-                className="nordic-card group cursor-pointer nordic-hover-lift overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {artworks.map((artwork, index) => <div key={artwork.id} className="nordic-card group cursor-pointer nordic-hover-lift overflow-hidden" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src={artwork.image}
-                    alt={artwork.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                  <img src={artwork.image} alt={artwork.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -153,15 +126,12 @@ const Gallery = () => {
                   
                   <p className="nordic-body text-muted-foreground">{artwork.description}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Gallery;
