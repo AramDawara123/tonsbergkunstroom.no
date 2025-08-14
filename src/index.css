@@ -81,12 +81,16 @@
 
   /* Modern Button Variants */
   .nordic-button-primary {
-    @apply relative bg-gradient-to-r from-primary to-nordic-forest text-primary-foreground hover:shadow-2xl px-8 py-4 rounded-2xl font-medium transition-all duration-500 overflow-hidden group;
+    @apply relative bg-gradient-to-r from-primary to-nordic-forest text-primary-foreground hover:shadow-2xl px-8 py-4 rounded-2xl font-medium transition-all duration-500 overflow-hidden;
     box-shadow: 0 8px 32px hsl(var(--nordic-deep) / 0.3);
   }
 
   .nordic-button-primary::before {
-    @apply content-[''] absolute inset-0 bg-gradient-to-r from-nordic-forest to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500;
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-nordic-forest to-primary opacity-0 transition-opacity duration-500;
+  }
+
+  .nordic-button-primary:hover::before {
+    @apply opacity-100;
   }
 
   .nordic-button-primary > * {
@@ -94,12 +98,16 @@
   }
 
   .nordic-button-secondary {
-    @apply relative bg-gradient-to-r from-secondary to-nordic-sage text-secondary-foreground hover:shadow-2xl px-8 py-4 rounded-2xl font-medium transition-all duration-500 overflow-hidden group;
+    @apply relative bg-gradient-to-r from-secondary to-nordic-sage text-secondary-foreground hover:shadow-2xl px-8 py-4 rounded-2xl font-medium transition-all duration-500 overflow-hidden;
     box-shadow: 0 8px 32px hsl(var(--nordic-sage) / 0.3);
   }
 
   .nordic-button-secondary::before {
-    @apply content-[''] absolute inset-0 bg-gradient-to-r from-nordic-sage to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-500;
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-nordic-sage to-secondary opacity-0 transition-opacity duration-500;
+  }
+
+  .nordic-button-secondary:hover::before {
+    @apply opacity-100;
   }
 
   .nordic-button-secondary > * {
