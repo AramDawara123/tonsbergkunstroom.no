@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Palette, Award, Users, ArrowRight, Star, MapPin } from 'lucide-react';
 
 const ArtistSection = () => {
@@ -87,10 +88,13 @@ const ArtistSection = () => {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group">
+              <Link 
+                to="/gallery"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group"
+              >
                 <span>Explore Astrid's Journey</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </div>
           </div>
 
