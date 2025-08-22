@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Palette, Users, Heart, Clock, ArrowRight } from 'lucide-react';
+import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target } from 'lucide-react';
 
 const Services = () => {
   const classes = [{
@@ -32,18 +32,18 @@ const Services = () => {
     schedule: "Sundays 13:00-15:30"
   }];
 
-  const commissionFeatures = [{
-    icon: <Heart className="w-8 h-8" />,
-    title: "Personal Consultation",
-    description: "One-on-one discussion to understand your vision and requirements."
+  const courseFeatures = [{
+    icon: <BookOpen className="w-8 h-8" />,
+    title: "Structured Learning",
+    description: "Progressive curriculum designed to build your skills step by step from basics to advanced techniques."
   }, {
-    icon: <Palette className="w-8 h-8" />,
-    title: "Custom Artwork",
-    description: "Original pieces created specifically for your space and taste."
+    icon: <Award className="w-8 h-8" />,
+    title: "Expert Instruction",
+    description: "Learn from professional artists with years of experience in teaching and creating Nordic-inspired art."
   }, {
-    icon: <Clock className="w-8 h-8" />,
-    title: "Flexible Timeline",
-    description: "Work with you to meet deadlines while ensuring quality."
+    icon: <Target className="w-8 h-8" />,
+    title: "Personal Growth",
+    description: "Develop your unique artistic voice while building confidence in your creative abilities."
   }];
 
   return (
@@ -102,20 +102,20 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Custom Commissions */}
+      {/* Why Choose Our Courses */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Custom Commissions</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Why Choose Our Art Courses?</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Transform your vision into a one-of-a-kind artwork. Whether it's a portrait, 
-                landscape, or abstract piece, we work closely with you to create something 
-                truly special that reflects your personal style and space.
+                Our art courses are designed to nurture creativity while providing solid technical foundations. 
+                Whether you're a complete beginner or looking to refine your skills, our supportive environment 
+                and expert guidance will help you achieve your artistic goals.
               </p>
 
               <div className="space-y-6 mb-8">
-                {commissionFeatures.map((feature, index) => (
+                {courseFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="text-primary">{feature.icon}</div>
                     <div>
@@ -128,16 +128,19 @@ const Services = () => {
                 ))}
               </div>
 
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300">
-                Request Commission
-              </button>
+              <Link 
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
+              >
+                Get Started Today
+              </Link>
             </div>
 
             <div className="relative">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Custom artwork process" 
+                  src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Art class in session" 
                   className="w-full h-96 object-cover" 
                 />
               </div>
