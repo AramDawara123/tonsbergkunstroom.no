@@ -38,7 +38,7 @@ const Contact = () => {
       <Navigation />
       
       {/* Header */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-gradient">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto px-6 text-center">
           <h1 className="nordic-heading mb-4">Visit Our Studio</h1>
           <p className="nordic-subtitle max-w-2xl mx-auto">

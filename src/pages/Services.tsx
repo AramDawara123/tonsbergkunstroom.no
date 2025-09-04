@@ -47,7 +47,7 @@ const Services = () => {
       <Navigation />
       
       {/* Header */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden nordic-gradient nordic-texture">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-gradient-to-br from-accent/40 to-primary/40 blur-lg animate-pulse delay-1000"></div>
