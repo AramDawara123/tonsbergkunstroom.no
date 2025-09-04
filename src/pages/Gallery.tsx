@@ -108,13 +108,7 @@ const Gallery = () => {
         </div>
 
         {/* Geometric Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 border border-primary/50 rounded-full animate-spin" style={{
-          animationDuration: '20s'
-        }} />
-          <div className="absolute top-40 right-32 w-24 h-24 border border-accent/50 rounded-lg rotate-45 animate-pulse" />
-          <div className="absolute bottom-32 left-1/3 w-28 h-28 border border-primary/40 rounded-full animate-bounce" />
-        </div>
+        
 
         <div className="container mx-auto px-6 text-center relative z-10">
           {/* Floating decorative orbs */}
