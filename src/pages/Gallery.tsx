@@ -173,31 +173,7 @@ const Gallery = () => {
               </div>
             </div>
 
-            {/* Featured Artwork Preview */}
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {artworks.slice(0, 3).map((artwork, index) => (
-                <div 
-                  key={artwork.id} 
-                  className="group cursor-pointer transform hover:-translate-y-2 transition-all duration-500"
-                  onClick={() => openLightbox(index)}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500">
-                    <img 
-                      src={artwork.image} 
-                      alt={artwork.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <h3 className="font-bold text-lg mb-1">{artwork.title}</h3>
-                      <p className="text-sm text-white/80">{artwork.category}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
-          </div>
         </div>
 
         {/* Scroll Indicator */}
