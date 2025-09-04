@@ -1,12 +1,38 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LightboxModal from '../components/LightboxModal';
 
 const Gallery = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    document.title = "Art Gallery | Nordic Art Studio";
+    const content = "Explore contemporary Nordic art: curated collection of landscapes, abstracts and mixed media.";
+    let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (metaDesc) {
+      metaDesc.setAttribute('content', content);
+    } else {
+      const m = document.createElement('meta');
+      m.name = 'description';
+      m.content = content;
+      document.head.appendChild(m);
+    }
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    const href = window.location.origin + window.location.pathname;
+    if (link) {
+      link.href = href;
+    } else {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  }, []);
 
   const artworks = [{
     id: 1,
@@ -155,7 +181,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="relative py-20">
+      <section id="collection" className="relative py-20">
         <div className="container mx-auto px-6">
           {/* Section intro */}
           <div className="text-center mb-16 nordic-fade-up">
@@ -175,6 +201,7 @@ const Gallery = () => {
                   <img 
                     src={artwork.image} 
                     alt={artwork.title} 
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
                   
