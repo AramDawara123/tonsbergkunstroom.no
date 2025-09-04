@@ -115,12 +115,6 @@ const Gallery = () => {
           <div className="max-w-6xl mx-auto">
             {/* Main Content */}
             <div className="text-center mb-16">
-              {/* Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-card border border-border/50 backdrop-blur-sm mb-8 shadow-lg">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse" />
-                <span className="text-sm font-semibold text-foreground">Nordic Art Gallery</span>
-              </div>
-
               {/* Main Title */}
               <h1 className="text-6xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
                 Discover
