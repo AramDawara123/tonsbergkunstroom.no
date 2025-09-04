@@ -1,14 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LightboxModal from '../components/LightboxModal';
-
 const Gallery = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   useEffect(() => {
     document.title = "Art Gallery | Nordic Art Studio";
     const content = "Explore contemporary Nordic art: curated collection of landscapes, abstracts and mixed media.";
@@ -21,7 +18,6 @@ const Gallery = () => {
       m.content = content;
       document.head.appendChild(m);
     }
-
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     const href = window.location.origin + window.location.pathname;
     if (link) {
@@ -33,7 +29,6 @@ const Gallery = () => {
       document.head.appendChild(link);
     }
   }, []);
-
   const artworks = [{
     id: 1,
     title: "Aurora Dreams",
@@ -77,26 +72,20 @@ const Gallery = () => {
     image: "https://images.unsplash.com/photo-1582561833283-4a93960afab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     description: "Where the rugged coastline meets the endless Nordic seas."
   }];
-
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
     setIsLightboxOpen(true);
   };
-
   const closeLightbox = () => {
     setIsLightboxOpen(false);
   };
-
   const goToPrevious = () => {
-    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : artworks.length - 1));
+    setCurrentImageIndex(prev => prev > 0 ? prev - 1 : artworks.length - 1);
   };
-
   const goToNext = () => {
-    setCurrentImageIndex((prev) => (prev < artworks.length - 1 ? prev + 1 : 0));
+    setCurrentImageIndex(prev => prev < artworks.length - 1 ? prev + 1 : 0);
   };
-
-  return (
-    <div className="min-h-screen relative overflow-hidden">
+  return <div className="min-h-screen relative overflow-hidden">
       <Navigation />
       
       {/* Animated Background */}
@@ -104,7 +93,9 @@ const Gallery = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background" />
         <div className="absolute top-1/4 -left-64 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse" />
         <div className="absolute bottom-1/3 -right-64 w-96 h-96 rounded-full bg-accent/5 blur-3xl animate-pulse animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-primary/3 to-accent/3 blur-3xl animate-spin" style={{animationDuration: '60s'}} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-primary/3 to-accent/3 blur-3xl animate-spin" style={{
+        animationDuration: '60s'
+      }} />
       </div>
       
       {/* Enhanced Header */}
@@ -118,7 +109,9 @@ const Gallery = () => {
 
         {/* Geometric Pattern Overlay */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 border border-primary/50 rounded-full animate-spin" style={{animationDuration: '20s'}} />
+          <div className="absolute top-20 left-20 w-32 h-32 border border-primary/50 rounded-full animate-spin" style={{
+          animationDuration: '20s'
+        }} />
           <div className="absolute top-40 right-32 w-24 h-24 border border-accent/50 rounded-lg rotate-45 animate-pulse" />
           <div className="absolute bottom-32 left-1/3 w-28 h-28 border border-primary/40 rounded-full animate-bounce" />
         </div>
@@ -177,7 +170,7 @@ const Gallery = () => {
         </div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        
       </section>
 
       {/* Gallery Grid */}
@@ -190,20 +183,11 @@ const Gallery = () => {
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {artworks.map((artwork, index) => (
-              <div 
-                key={artwork.id} 
-                className="nordic-card group cursor-pointer nordic-hover-lift"
-                onClick={() => openLightbox(index)}
-                style={{animationDelay: `${index * 100}ms`}}
-              >
+            {artworks.map((artwork, index) => <div key={artwork.id} className="nordic-card group cursor-pointer nordic-hover-lift" onClick={() => openLightbox(index)} style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="relative aspect-square overflow-hidden rounded-t-2xl">
-                  <img 
-                    src={artwork.image} 
-                    alt={artwork.title} 
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  />
+                  <img src={artwork.image} alt={artwork.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   
                   {/* Premium overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -240,8 +224,7 @@ const Gallery = () => {
                   <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 group-hover:scale-150 transition-transform duration-500" />
                   <div className="absolute top-4 right-6 w-2 h-2 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 group-hover:scale-125 transition-transform duration-700 animation-delay-200" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Collection stats */}
@@ -267,18 +250,9 @@ const Gallery = () => {
       </section>
 
       {/* Lightbox Modal */}
-      <LightboxModal
-        isOpen={isLightboxOpen}
-        onClose={closeLightbox}
-        artworks={artworks}
-        currentIndex={currentImageIndex}
-        onPrevious={goToPrevious}
-        onNext={goToNext}
-      />
+      <LightboxModal isOpen={isLightboxOpen} onClose={closeLightbox} artworks={artworks} currentIndex={currentImageIndex} onPrevious={goToPrevious} onNext={goToNext} />
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Gallery;
