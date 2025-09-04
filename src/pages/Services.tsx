@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target, Sparkles, Star } from 'lucide-react';
+import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target, Sparkles, Star, HelpCircle } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 const Services = () => {
   const classes = [{
     id: 'beginners-watercolor',
@@ -213,6 +214,108 @@ const Services = () => {
                   
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 modern-grid opacity-20"></div>
+        <div className="absolute top-10 left-20 w-48 h-48 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-2xl"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <HelpCircle className="w-4 h-4" />
+              Questions & Answers
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+              Frequently Asked
+              <span className="nordic-gradient-text"> Questions</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to know about our Nordic art classes and enrollment process
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  What materials are included in the course fees?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  All basic art supplies are included in your course fee, including paints, brushes, canvases, and paper. 
+                  You only need to bring your creativity and enthusiasm to learn! For advanced courses, we provide premium materials 
+                  to help you achieve professional results.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  Do I need prior art experience to join?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  Not at all! Our beginner courses are designed for complete newcomers to art. We start with fundamental 
+                  techniques and gradually build your skills. For advanced courses, we recommend some basic painting experience, 
+                  but our instructors will assess and guide you accordingly.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  What is your cancellation and refund policy?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  We offer full refunds for cancellations made 48 hours before the class start time. For cancellations 
+                  within 48 hours, we provide a credit that can be used for future classes within 6 months. In case of 
+                  emergencies, please contact us directly to discuss options.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  How small are the class sizes?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  We maintain small class sizes to ensure personalized attention. Our beginner classes have a maximum of 8 students, 
+                  advanced oil painting classes limit to 6 students, and abstract expression classes accommodate up to 10 students. 
+                  This allows our instructors to provide individual guidance and feedback.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  Can I book a trial class before committing to a full course?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  Yes! We offer single-session trial classes for 300 NOK, which can be credited toward your full course fee 
+                  if you decide to continue. This is a great way to experience our teaching style and studio atmosphere 
+                  before making a commitment to the full program.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="nordic-card border border-primary/10">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
+                  What safety measures do you have in place?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  Our studio follows all health and safety guidelines. We provide proper ventilation, safety equipment for 
+                  paint handling, and maintain clean, sanitized workspaces. All materials we use are non-toxic and safe for 
+                  indoor use. We also have first aid supplies readily available.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <div className="text-center mt-12">
+              <p className="text-muted-foreground mb-6">Still have questions? We're here to help!</p>
+              <Link to="/contact" className="nordic-button-primary group/btn">
+                <span>Contact Us</span>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
