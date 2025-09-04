@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import LightboxModal from '../components/LightboxModal';
-import { Eye, Heart } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 const Gallery = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -106,15 +106,6 @@ const Gallery = () => {
                   
                   {/* Actions */}
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <button 
-                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        // Handle like functionality
-                      }}
-                    >
-                      <Heart className="w-4 h-4" />
-                    </button>
                     <button 
                       className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30"
                       onClick={(e) => {
