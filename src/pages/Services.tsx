@@ -50,10 +50,7 @@ const Services = () => {
       {/* Header */}
       <PageHero>
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full nordic-glass text-foreground text-sm font-medium mb-6 animate-fade-in">
-            <Sparkles className="w-4 h-4" />
-            Premium Art Education
-          </div>
+          
           
           <h1 className="nordic-heading mb-6">Nordic Art Classes</h1>
           <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">
