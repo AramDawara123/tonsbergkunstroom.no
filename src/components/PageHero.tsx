@@ -7,7 +7,7 @@ interface PageHeroProps {
 
 const PageHero: React.FC<PageHeroProps> = ({ children, className = '' }) => {
   return (
-    <section className={`relative min-h-[100svh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background ${className}`}>
+    <section className={`relative min-h-[60vh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background ${className}`}>
       {/* Background gradient layer */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-background" />
 
