@@ -114,7 +114,7 @@ const Gallery = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Main Content */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 mt-16">
               {/* Main Title */}
               <h1 className="text-6xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
                 Discover
