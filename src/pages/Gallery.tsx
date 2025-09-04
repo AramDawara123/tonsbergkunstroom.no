@@ -81,25 +81,77 @@ const Gallery = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-primary/3 to-accent/3 blur-3xl animate-spin" style={{animationDuration: '60s'}} />
       </div>
       
-      {/* Header */}
-      <section className="relative pt-32 pb-20">
-        <div className="container mx-auto px-6 text-center">
-          {/* Floating decorative elements */}
-          <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl animate-float" />
-          <div className="absolute top-32 right-20 w-24 h-24 rounded-full bg-gradient-to-br from-accent/15 to-primary/15 blur-xl animate-float animation-delay-1000" />
-          <div className="absolute bottom-10 left-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-xl animate-float animation-delay-2000" />
+      {/* Enhanced Header */}
+      <section className="relative pt-32 pb-32 overflow-hidden">
+        {/* Dynamic Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-primary/20 via-accent/15 to-transparent blur-3xl animate-pulse" />
+          <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full bg-gradient-to-bl from-accent/25 via-primary/10 to-transparent blur-3xl animate-pulse animation-delay-1000" />
+          <div className="absolute bottom-0 left-1/2 w-72 h-72 rounded-full bg-gradient-to-tr from-primary/15 via-accent/20 to-transparent blur-3xl animate-pulse animation-delay-2000" />
+        </div>
+
+        {/* Geometric Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-32 h-32 border border-primary/30 rounded-full animate-spin" style={{animationDuration: '20s'}} />
+          <div className="absolute top-40 right-32 w-24 h-24 border border-accent/30 rounded-lg rotate-45 animate-pulse" />
+          <div className="absolute bottom-32 left-1/3 w-28 h-28 border border-primary/20 rounded-full animate-bounce" />
+        </div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          {/* Floating decorative orbs */}
+          <div className="absolute -top-10 left-16 w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-xl animate-float shadow-2xl" />
+          <div className="absolute top-20 right-24 w-32 h-32 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-2xl animate-float animation-delay-1000 shadow-2xl" />
+          <div className="absolute -bottom-5 left-1/3 w-24 h-24 rounded-full bg-gradient-to-br from-primary/25 to-accent/25 blur-xl animate-float animation-delay-2000 shadow-2xl" />
+          <div className="absolute bottom-10 right-1/4 w-16 h-16 rounded-full bg-gradient-to-br from-accent/35 to-primary/35 blur-lg animate-float animation-delay-3000 shadow-2xl" />
           
           <div className="nordic-fade-up">
-            <h1 className="nordic-display text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-foreground to-accent bg-clip-text text-transparent">
-              Art Gallery
-            </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full" />
-            <p className="nordic-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover our complete collection of contemporary Nordic art, 
-              each piece telling a story of landscape, light, and the Nordic soul that connects us all.
-            </p>
+            {/* Artistic Title */}
+            <div className="relative mb-8">
+              <h1 className="nordic-display text-5xl lg:text-7xl font-bold mb-4 bg-gradient-to-br from-primary via-foreground to-accent bg-clip-text text-transparent relative z-10">
+                Art Gallery
+              </h1>
+              {/* Title shadow effect */}
+              <div className="absolute inset-0 text-5xl lg:text-7xl font-bold text-primary/10 blur-sm transform translate-x-2 translate-y-2">
+                Art Gallery
+              </div>
+            </div>
+            
+            {/* Elegant divider */}
+            <div className="relative mb-10">
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gradient-to-br from-primary to-accent shadow-lg" />
+            </div>
+            
+            {/* Enhanced description */}
+            <div className="relative">
+              <p className="nordic-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
+                Discover our complete collection of contemporary Nordic art, 
+                each piece telling a story of landscape, light, and the Nordic soul that connects us all.
+              </p>
+              
+              {/* Subtitle */}
+              <p className="text-sm text-primary/70 font-semibold tracking-wider uppercase">
+                ✦ Curated Excellence ✦ Nordic Heritage ✦ Timeless Beauty ✦
+              </p>
+            </div>
+
+            {/* Interactive elements */}
+            <div className="mt-12 flex flex-wrap justify-center gap-6">
+              <div className="nordic-glass px-6 py-3 rounded-full text-sm font-semibold text-primary border border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default">
+                {artworks.length} Masterpieces
+              </div>
+              <div className="nordic-glass px-6 py-3 rounded-full text-sm font-semibold text-accent border border-accent/20 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default">
+                Nordic Inspired
+              </div>
+              <div className="nordic-glass px-6 py-3 rounded-full text-sm font-semibold text-foreground/80 border border-foreground/10 shadow-lg hover:shadow-xl transition-all duration-300 cursor-default">
+                2023-2024 Collection
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Gallery Grid */}
