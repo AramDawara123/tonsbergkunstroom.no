@@ -70,60 +70,119 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative overflow-hidden">
       <Navigation />
       
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background" />
+        <div className="absolute top-1/4 -left-64 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/3 -right-64 w-96 h-96 rounded-full bg-accent/5 blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-primary/3 to-accent/3 blur-3xl animate-spin" style={{animationDuration: '60s'}} />
+      </div>
+      
       {/* Header */}
-      <section className="pt-32 pb-20 bg-muted">
+      <section className="relative pt-32 pb-20">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">Art Gallery</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover our complete collection of contemporary Nordic art, 
-            each piece telling a story of landscape, light, and the Nordic soul that connects us all.
-          </p>
+          {/* Floating decorative elements */}
+          <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl animate-float" />
+          <div className="absolute top-32 right-20 w-24 h-24 rounded-full bg-gradient-to-br from-accent/15 to-primary/15 blur-xl animate-float animation-delay-1000" />
+          <div className="absolute bottom-10 left-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-xl animate-float animation-delay-2000" />
+          
+          <div className="nordic-fade-up">
+            <h1 className="nordic-display text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-foreground to-accent bg-clip-text text-transparent">
+              Art Gallery
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8 rounded-full" />
+            <p className="nordic-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Discover our complete collection of contemporary Nordic art, 
+              each piece telling a story of landscape, light, and the Nordic soul that connects us all.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-20 bg-background">
+      <section className="relative py-20">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+          {/* Section intro */}
+          <div className="text-center mb-16 nordic-fade-up">
+            <h2 className="nordic-heading text-3xl font-bold mb-4">Featured Collection</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Each artwork is a window into the Nordic soul, crafted with passion and precision.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {artworks.map((artwork, index) => (
-              <div key={artwork.id} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div 
-                  className="relative aspect-square overflow-hidden cursor-pointer"
-                  onClick={() => openLightbox(index)}
-                >
+              <div 
+                key={artwork.id} 
+                className="nordic-card group cursor-pointer nordic-hover-lift"
+                onClick={() => openLightbox(index)}
+                style={{animationDelay: `${index * 100}ms`}}
+              >
+                <div className="relative aspect-square overflow-hidden rounded-t-2xl">
                   <img 
                     src={artwork.image} 
                     alt={artwork.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
                   
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+                  {/* Premium overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  
                   {/* Year Badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium">
+                  <div className="absolute top-4 left-4 px-4 py-2 rounded-full nordic-glass text-white text-sm font-semibold shadow-lg">
                     {artwork.year}
+                  </div>
+
+                  {/* View overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="nordic-glass px-6 py-3 rounded-full text-white font-semibold shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      View Artwork
+                    </div>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-semibold text-foreground">
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="nordic-heading text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {artwork.title}
                     </h3>
                   </div>
                   
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 text-primary text-sm font-semibold mb-4 border border-primary/20">
                     {artwork.category}
                   </span>
                   
-                  <p className="text-muted-foreground text-sm leading-relaxed">{artwork.description}</p>
+                  <p className="nordic-body text-muted-foreground leading-relaxed">{artwork.description}</p>
+                </div>
+
+                {/* Decorative corner elements */}
+                <div className="absolute top-0 right-0 w-16 h-16">
+                  <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 group-hover:scale-150 transition-transform duration-500" />
+                  <div className="absolute top-4 right-6 w-2 h-2 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 group-hover:scale-125 transition-transform duration-700 animation-delay-200" />
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Collection stats */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 nordic-fade-up">
+            <div className="text-center nordic-glass p-6 rounded-2xl">
+              <div className="text-3xl font-bold text-primary mb-2">{artworks.length}</div>
+              <div className="text-sm text-muted-foreground">Artworks</div>
+            </div>
+            <div className="text-center nordic-glass p-6 rounded-2xl">
+              <div className="text-3xl font-bold text-primary mb-2">4</div>
+              <div className="text-sm text-muted-foreground">Categories</div>
+            </div>
+            <div className="text-center nordic-glass p-6 rounded-2xl">
+              <div className="text-3xl font-bold text-primary mb-2">2024</div>
+              <div className="text-sm text-muted-foreground">Latest Work</div>
+            </div>
+            <div className="text-center nordic-glass p-6 rounded-2xl">
+              <div className="text-3xl font-bold text-primary mb-2">∞</div>
+              <div className="text-sm text-muted-foreground">Inspiration</div>
+            </div>
           </div>
         </div>
       </section>
