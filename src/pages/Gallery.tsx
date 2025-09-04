@@ -118,7 +118,7 @@ const Gallery = () => {
               {/* Main Title */}
               <h1 className="text-6xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
                 Discover
-                <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
+                <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   Nordic Art
                 </span>
               </h1>
