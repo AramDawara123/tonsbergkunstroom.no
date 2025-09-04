@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target, Sparkles, Star } from 'lucide-react';
-
 const Services = () => {
   const classes = [{
     id: 'beginners-watercolor',
@@ -31,7 +29,6 @@ const Services = () => {
     description: "Explore abstract art techniques and find your unique artistic voice.",
     schedule: "Sundays 13:00-15:30"
   }];
-
   const courseFeatures = [{
     icon: <BookOpen className="w-8 h-8" />,
     title: "Structured Learning",
@@ -45,9 +42,7 @@ const Services = () => {
     title: "Personal Growth",
     description: "Develop your unique artistic voice while building confidence in your creative abilities."
   }];
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Header */}
@@ -98,8 +93,7 @@ const Services = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {classes.map((classItem, index) => (
-              <div key={index} className="group relative nordic-card nordic-hover-lift overflow-hidden">
+            {classes.map((classItem, index) => <div key={index} className="group relative nordic-card nordic-hover-lift overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
@@ -110,9 +104,7 @@ const Services = () => {
                       <span className="text-sm font-medium text-primary uppercase tracking-wide">Premium Course</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
-                      ))}
+                      {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />)}
                     </div>
                   </div>
                   
@@ -150,16 +142,12 @@ const Services = () => {
                     </div>
                   </div>
 
-                  <Link 
-                    to={`/course/${classItem.id}`} 
-                    className="nordic-button-primary w-full text-center inline-flex items-center justify-center gap-2 group/btn"
-                  >
+                  <Link to={`/course/${classItem.id}`} className="nordic-button-primary w-full text-center inline-flex items-center justify-center gap-2 group/btn">
                     <span>Enroll Now</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -190,8 +178,7 @@ const Services = () => {
               </p>
 
               <div className="space-y-8 mb-12">
-                {courseFeatures.map((feature, index) => (
-                  <div key={index} className="group flex items-start space-x-6 p-6 rounded-2xl bg-gradient-to-r from-white/50 to-white/30 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                {courseFeatures.map((feature, index) => <div key={index} className="group flex items-start space-x-6 p-6 rounded-2xl bg-gradient-to-r from-white/50 to-white/30 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
                     <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
@@ -201,22 +188,15 @@ const Services = () => {
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/contact"
-                  className="nordic-button-primary group/btn"
-                >
+                <Link to="/contact" className="nordic-button-primary group/btn">
                   <span>Get Started Today</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
-                <Link 
-                  to="/gallery"
-                  className="nordic-button-secondary group/btn"
-                >
+                <Link to="/gallery" className="nordic-button-secondary group/btn">
                   <Palette className="w-4 h-4 mr-2" />
                   <span>View Student Work</span>
                 </Link>
@@ -226,26 +206,11 @@ const Services = () => {
             <div className="order-1 lg:order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
               <div className="relative nordic-card overflow-hidden group">
-                <img 
-                  src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Art class in session showcasing students learning Nordic painting techniques" 
-                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700" 
-                />
+                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Art class in session showcasing students learning Nordic painting techniques" className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/20 transition-colors duration-500"></div>
                 
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">Live Class Preview</div>
-                        <div className="font-semibold text-foreground">Nordic Watercolor Session</div>
-                      </div>
-                      <div className="flex items-center space-x-1 text-yellow-400">
-                        <Star className="w-4 h-4 fill-current" />
-                        <span className="text-sm font-medium text-foreground">4.9</span>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -254,8 +219,6 @@ const Services = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
