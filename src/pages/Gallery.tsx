@@ -101,11 +101,7 @@ const Gallery = () => {
       {/* Enhanced Header */}
       <section className="relative pt-32 pb-32 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
         {/* Dynamic Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-primary/10 via-accent/8 to-transparent blur-3xl animate-pulse" />
-          <div className="absolute top-1/2 right-1/3 w-80 h-80 rounded-full bg-gradient-to-bl from-accent/12 via-primary/6 to-transparent blur-3xl animate-pulse animation-delay-1000" />
-          <div className="absolute bottom-0 left-1/2 w-72 h-72 rounded-full bg-gradient-to-tr from-primary/8 via-accent/10 to-transparent blur-3xl animate-pulse animation-delay-2000" />
-        </div>
+        
 
         {/* Geometric Pattern Overlay */}
         
