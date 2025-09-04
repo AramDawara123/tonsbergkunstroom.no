@@ -310,11 +310,11 @@ const Services = () => {
               </AccordionItem>
             </Accordion>
             
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 relative z-10">
               <p className="text-muted-foreground mb-6">Still have questions? We're here to help!</p>
-              <Link to="/contact" className="nordic-button-primary group/btn">
+              <Link to="/contact" className="nordic-button-primary inline-flex items-center justify-center gap-2 group/btn">
                 <span>Contact Us</span>
-                <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
