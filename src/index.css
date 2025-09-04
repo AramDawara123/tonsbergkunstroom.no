@@ -43,8 +43,8 @@
     --radius: 1rem;
 
     /* Nordic Typography Scale */
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
   }
 
   body {

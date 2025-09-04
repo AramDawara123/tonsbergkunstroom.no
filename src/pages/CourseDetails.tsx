@@ -119,8 +119,8 @@ const CourseDetails = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Header */}
-      <section className="pt-24 pb-8">
+      {/* Course Hero */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-6">
           <Link 
             to="/services" 
@@ -129,12 +129,7 @@ const CourseDetails = () => {
             <ArrowLeft className="w-4 h-4" />
             Back to Classes
           </Link>
-        </div>
-      </section>
-
-      {/* Course Hero */}
-      <section className="pb-16">
-        <div className="container mx-auto px-6">
+          
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
