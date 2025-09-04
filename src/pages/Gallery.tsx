@@ -107,11 +107,13 @@ const Gallery = () => {
           <div className="nordic-fade-up">
             {/* Artistic Title */}
             <div className="relative mb-8">
-              <h1 className="nordic-display text-5xl lg:text-7xl font-bold mb-4 bg-gradient-to-br from-primary via-foreground to-accent bg-clip-text text-transparent relative z-10">
-                Art Gallery
+              <h1 className="nordic-display text-5xl lg:text-7xl font-bold mb-4 text-foreground relative z-10">
+                <span className="bg-gradient-to-br from-primary via-foreground to-accent bg-clip-text text-transparent">
+                  Art Gallery
+                </span>
               </h1>
               {/* Title shadow effect */}
-              <div className="absolute inset-0 text-5xl lg:text-7xl font-bold text-primary/10 blur-sm transform translate-x-2 translate-y-2">
+              <div className="absolute inset-0 text-5xl lg:text-7xl font-bold text-primary/20 blur-sm transform translate-x-2 translate-y-2">
                 Art Gallery
               </div>
             </div>
@@ -124,13 +126,13 @@ const Gallery = () => {
             
             {/* Enhanced description */}
             <div className="relative">
-              <p className="nordic-body text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="nordic-body text-xl text-foreground max-w-4xl mx-auto leading-relaxed mb-8">
                 Discover our complete collection of contemporary Nordic art, 
                 each piece telling a story of landscape, light, and the Nordic soul that connects us all.
               </p>
               
               {/* Subtitle */}
-              <p className="text-sm text-primary/70 font-semibold tracking-wider uppercase">
+              <p className="text-sm text-primary font-semibold tracking-wider uppercase">
                 ✦ Curated Excellence ✦ Nordic Heritage ✦ Timeless Beauty ✦
               </p>
             </div>
