@@ -1,10 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import LightboxModal from '../components/LightboxModal';
 import { Eye, Heart } from 'lucide-react';
 
 const Gallery = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const artworks = [{
     id: 1,
     title: "Aurora Dreams",
@@ -49,6 +53,23 @@ const Gallery = () => {
     description: "Where the rugged coastline meets the endless Nordic seas."
   }];
 
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : artworks.length - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prev) => (prev < artworks.length - 1 ? prev + 1 : 0));
+  };
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -70,7 +91,10 @@ const Gallery = () => {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
             {artworks.map((artwork, index) => (
               <div key={artwork.id} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div className="relative aspect-square overflow-hidden">
+                <div 
+                  className="relative aspect-square overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
                   <img 
                     src={artwork.image} 
                     alt={artwork.title} 
@@ -82,10 +106,22 @@ const Gallery = () => {
                   
                   {/* Actions */}
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30">
+                    <button 
+                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        // Handle like functionality
+                      }}
+                    >
                       <Heart className="w-4 h-4" />
                     </button>
-                    <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30">
+                    <button 
+                      className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openLightbox(index);
+                      }}
+                    >
                       <Eye className="w-4 h-4" />
                     </button>
                   </div>
@@ -114,6 +150,16 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      <LightboxModal
+        isOpen={isLightboxOpen}
+        onClose={closeLightbox}
+        artworks={artworks}
+        currentIndex={currentImageIndex}
+        onPrevious={goToPrevious}
+        onNext={goToNext}
+      />
 
       <Footer />
     </div>
