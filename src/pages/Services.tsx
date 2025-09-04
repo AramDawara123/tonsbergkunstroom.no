@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target, Sparkles, Star, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import PageHero from '../components/PageHero';
 const Services = () => {
   const classes = [{
     id: 'beginners-watercolor',
@@ -47,40 +48,34 @@ const Services = () => {
       <Navigation />
       
       {/* Header */}
-      <section className="relative min-h-[100svh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-gradient-to-br from-accent/40 to-primary/40 blur-lg animate-pulse delay-1000"></div>
-        
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6 animate-fade-in">
+      <PageHero>
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full nordic-glass text-foreground text-sm font-medium mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
             Premium Art Education
           </div>
           
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-white nordic-gradient-text animate-fade-in">
-            Nordic Art Classes
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+          <h1 className="nordic-heading mb-6">Nordic Art Classes</h1>
+          <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">
             Immerse yourself in the beauty of Nordic art traditions with expert guidance and inspiring studio atmosphere.
           </p>
           
           <div className="flex justify-center gap-8 mt-12 animate-fade-in">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">50+</div>
-              <div className="text-white/80 text-sm">Happy Students</div>
+              <div className="text-3xl font-bold text-primary">50+</div>
+              <div className="text-sm text-muted-foreground">Happy Students</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">3</div>
-              <div className="text-white/80 text-sm">Course Levels</div>
+              <div className="text-3xl font-bold text-primary">3</div>
+              <div className="text-sm text-muted-foreground">Course Levels</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">100%</div>
-              <div className="text-white/80 text-sm">Satisfaction</div>
+              <div className="text-3xl font-bold text-primary">100%</div>
+              <div className="text-sm text-muted-foreground">Satisfaction</div>
             </div>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Art Classes */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/50 relative overflow-hidden">
