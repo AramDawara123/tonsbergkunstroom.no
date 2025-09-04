@@ -248,27 +248,6 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Floating testimonial */}
-              <div className="absolute -right-6 top-20 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl max-w-xs nordic-float">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm">
-                    A
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground text-sm">Anna Larsson</div>
-                    <div className="text-xs text-muted-foreground">Watercolor Student</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  "The Nordic techniques taught here transformed my art completely!"
-                </p>
-              </div>
             </div>
           </div>
         </div>
