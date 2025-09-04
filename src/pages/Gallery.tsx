@@ -176,10 +176,6 @@ const Gallery = () => {
             </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-1 h-12 bg-gradient-to-b from-primary to-transparent rounded-full" />
-        </div>
       </section>
 
       {/* Gallery Grid */}
