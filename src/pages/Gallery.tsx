@@ -107,10 +107,8 @@ const Gallery = () => {
           <div className="nordic-fade-up">
             {/* Artistic Title */}
             <div className="relative mb-8">
-              <h1 className="nordic-display text-5xl lg:text-7xl font-bold mb-4 relative z-10">
-                <span className="bg-gradient-to-br from-primary via-foreground to-accent bg-clip-text text-transparent drop-shadow-lg">
-                  Art Gallery
-                </span>
+              <h1 className="nordic-display text-5xl lg:text-7xl font-bold mb-4 text-foreground relative z-10">
+                Art Gallery
               </h1>
               {/* Title shadow effect */}
               <div className="absolute inset-0 text-5xl lg:text-7xl font-bold text-primary/10 blur-sm transform translate-x-2 translate-y-2">
