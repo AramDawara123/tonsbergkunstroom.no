@@ -99,7 +99,7 @@ const Gallery = () => {
       </div>
       
       {/* New Hero Section */}
-      <section className="relative min-h-[100svh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
+      <section className="relative min-h-[60vh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
         {/* Hero Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-background">
           {/* Animated Nordic Pattern */}
