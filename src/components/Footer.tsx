@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-nordic-charcoal text-nordic-birch py-16">
+  return <footer className="bg-nordic-charcoal text-nordic-birch py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Studio Info */}
@@ -60,13 +57,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-nordic-stone mt-12 pt-8 text-center">
-          <p className="text-nordic-ash">
-            © 2024 Nordic Art Studio. All rights reserved. Created with love in Norway.
-          </p>
+          <p className="text-nordic-ash">© 2025 Nordic Art Studio. All rights reserved. Created with love in Norway.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
