@@ -7,8 +7,8 @@ const Gallery = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
-    document.title = "Art Gallery | Nordic Art Studio";
-    const content = "Explore contemporary Nordic art: curated collection of landscapes, abstracts and mixed media.";
+    document.title = "Kunstgalleri | Nordic Art Studio";
+    const content = "Utforsk samtids nordisk kunst: kuratert samling av landskap, abstrakt og mixed media.";
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) {
       metaDesc.setAttribute('content', content);
@@ -31,46 +31,46 @@ const Gallery = () => {
   }, []);
   const artworks = [{
     id: 1,
-    title: "Aurora Dreams",
-    category: "Abstract",
+    title: "Aurora Drømmer",
+    category: "Abstrakt",
     year: "2024",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "Inspired by the dancing northern lights over the Arctic landscape."
+    description: "Inspirert av det dansende nordlyset over det arktiske landskapet."
   }, {
     id: 2,
-    title: "Fjord Serenity",
-    category: "Landscape",
+    title: "Fjord Serenitet",
+    category: "Landskap",
     year: "2024",
     image: "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "The peaceful morning mist rising from ancient Norwegian fjords."
+    description: "Den fredelige morgentåken som stiger fra gamle norske fjorder."
   }, {
     id: 3,
-    title: "Winter Solstice",
-    category: "Mixed Media",
+    title: "Vintersolverv",
+    category: "Blandede Medier",
     year: "2023",
     image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "Celebrating the longest night and the promise of returning light."
+    description: "En feiring av den lengste natten og løftet om tilbakevendende lys."
   }, {
     id: 4,
-    title: "Midnight Sun",
-    category: "Oil on Canvas",
+    title: "Midnattsol",
+    category: "Olje på Lerret",
     year: "2023",
     image: "https://images.unsplash.com/photo-1536924430914-91f9e2d76e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "The ethereal beauty of summer nights in the Arctic Circle."
+    description: "Den eteriske skjønnheten av sommernetter i den arktiske sirkel."
   }, {
     id: 5,
-    title: "Forest Whispers",
-    category: "Watercolor",
+    title: "Skogens Hvisken",
+    category: "Akvarell",
     year: "2024",
     image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "The ancient stories told by Norway's primeval forests."
+    description: "De gamle historiene fortalt av Norges urskogene."
   }, {
     id: 6,
-    title: "Coastal Harmony",
-    category: "Acrylic",
+    title: "Kyst Harmoni",
+    category: "Akryl",
     year: "2024",
     image: "https://images.unsplash.com/photo-1582561833283-4a93960afab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    description: "Where the rugged coastline meets the endless Nordic seas."
+    description: "Hvor den ville kystlinjen møter det endelige nordiske havet."
   }];
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -117,16 +117,16 @@ const Gallery = () => {
             <div className="text-center mb-16 mt-16">
               {/* Main Title */}
               <h1 className="text-6xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
-                Discover
+                Oppdag
                 <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  Nordic Art
+                  Nordisk Kunst
                 </span>
               </h1>
 
               {/* Description */}
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12 font-medium">
-                Immerse yourself in a curated collection of contemporary Nordic masterpieces. 
-                Each artwork captures the essence of Scandinavian beauty, from ethereal landscapes to bold abstracts.
+                Fordyp deg i en kuratert samling av samtidige nordiske mesterverk. 
+                Hvert kunstverk fanger essensen av skandinavisk skjønnhet, fra eteriske landskap til dristige abstrakte verk.
               </p>
 
               {/* CTA Buttons */}
@@ -139,7 +139,7 @@ const Gallery = () => {
                     document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  <span className="mr-2">Explore Collection</span>
+                  <span className="mr-2">Utforsk Samlingen</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -149,7 +149,7 @@ const Gallery = () => {
                   to="/contact"
                   className="inline-flex items-center px-8 py-4 bg-card text-foreground border-2 border-border rounded-full font-semibold text-lg hover:bg-muted/50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <span className="mr-2">Contact Artist</span>
+                  <span className="mr-2">Kontakt Kunstner</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
@@ -160,15 +160,15 @@ const Gallery = () => {
               <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-primary mb-2">{artworks.length}</div>
-                  <div className="text-sm text-muted-foreground font-medium">Artworks</div>
+                  <div className="text-sm text-muted-foreground font-medium">Kunstverk</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-primary mb-2">4</div>
-                  <div className="text-sm text-muted-foreground font-medium">Categories</div>
+                  <div className="text-sm text-muted-foreground font-medium">Kategorier</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-primary mb-2">2024</div>
-                  <div className="text-sm text-muted-foreground font-medium">Latest</div>
+                  <div className="text-sm text-muted-foreground font-medium">Nyeste</div>
                 </div>
               </div>
             </div>
@@ -183,8 +183,8 @@ const Gallery = () => {
         <div className="container mx-auto px-6">
           {/* Section intro */}
           <div className="text-center mb-16 nordic-fade-up">
-            <h2 className="nordic-heading text-3xl font-bold mb-4">Featured Collection</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Each artwork is a window into the Nordic soul, crafted with passion and precision.</p>
+            <h2 className="nordic-heading text-3xl font-bold mb-4">Utvalgt Samling</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Hvert kunstverk er et vindu inn i den nordiske sjelen, laget med lidenskap og presisjon.</p>
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -205,7 +205,7 @@ const Gallery = () => {
                   {/* View overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <div className="nordic-glass px-6 py-3 rounded-full text-white font-semibold shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      View Artwork
+                      Se Kunstverk
                     </div>
                   </div>
                 </div>
@@ -236,19 +236,19 @@ const Gallery = () => {
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 nordic-fade-up">
             <div className="text-center nordic-glass p-6 rounded-2xl">
               <div className="text-3xl font-bold text-primary mb-2">{artworks.length}</div>
-              <div className="text-sm text-muted-foreground">Artworks</div>
+              <div className="text-sm text-muted-foreground">Kunstverk</div>
             </div>
             <div className="text-center nordic-glass p-6 rounded-2xl">
               <div className="text-3xl font-bold text-primary mb-2">4</div>
-              <div className="text-sm text-muted-foreground">Categories</div>
+              <div className="text-sm text-muted-foreground">Kategorier</div>
             </div>
             <div className="text-center nordic-glass p-6 rounded-2xl">
               <div className="text-3xl font-bold text-primary mb-2">2024</div>
-              <div className="text-sm text-muted-foreground">Latest Work</div>
+              <div className="text-sm text-muted-foreground">Nyeste Arbeid</div>
             </div>
             <div className="text-center nordic-glass p-6 rounded-2xl">
               <div className="text-3xl font-bold text-primary mb-2">∞</div>
-              <div className="text-sm text-muted-foreground">Inspiration</div>
+              <div className="text-sm text-muted-foreground">Inspirasjon</div>
             </div>
           </div>
         </div>

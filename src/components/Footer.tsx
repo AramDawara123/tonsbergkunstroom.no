@@ -8,8 +8,8 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-display font-bold mb-4">Nordic Art Studio</h3>
             <p className="text-nordic-ash mb-6 max-w-md">
-              Creating and sharing the beauty of Nordic art in the heart of Norway. 
-              Join us on a journey of artistic discovery and creative expression.
+              Skaper og deler skjønnheten av nordisk kunst i hjertet av Norge. 
+              Bli med oss på en reise med kunstnerisk oppdagelse og kreativt uttrykk.
             </p>
             <div className="flex space-x-4">
               <Instagram className="w-6 h-6 text-nordic-ash hover:text-nordic-birch cursor-pointer transition-colors" />
@@ -19,7 +19,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4">Kontakt</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-nordic-sage" />
@@ -38,26 +38,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Hurtiglenker</h4>
             <div className="space-y-2">
               <a href="/gallery" className="block text-nordic-ash hover:text-nordic-birch transition-colors">
-                Gallery
+                Galleri
               </a>
               <a href="/services" className="block text-nordic-ash hover:text-nordic-birch transition-colors">
-                Art Classes
+                Kunstkurs
               </a>
               <a href="/services" className="block text-nordic-ash hover:text-nordic-birch transition-colors">
-                Commissions
+                Bestillinger
               </a>
               <a href="/contact" className="block text-nordic-ash hover:text-nordic-birch transition-colors">
-                Visit Studio
+                Besøk Studio
               </a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-nordic-stone mt-12 pt-8 text-center">
-          <p className="text-nordic-ash">© 2025 Nordic Art Studio. All rights reserved. Created with love in Norway.</p>
+          <p className="text-nordic-ash">© 2025 Nordic Art Studio. Alle rettigheter reservert. Laget med kjærlighet i Norge.</p>
         </div>
       </div>
     </footer>;

@@ -9,29 +9,29 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      label: "Email",
+      label: "E-post",
       value: "hello@nordicart.no",
       link: "mailto:hello@nordicart.no"
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: "Phone",
+      label: "Telefon",
       value: "+47 123 45 678",
       link: "tel:+47123456789"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: "Address",
-      value: "Kunstnergata 15, 0150 Oslo, Norway",
+      label: "Adresse",
+      value: "Kunstnergata 15, 0150 Oslo, Norge",
       link: "https://maps.google.com"
     }
   ];
 
   const hours = [
-    { day: "Monday - Tuesday", time: "Closed" },
-    { day: "Wednesday - Friday", time: "10:00 - 18:00" },
-    { day: "Saturday", time: "10:00 - 16:00" },
-    { day: "Sunday", time: "12:00 - 16:00" }
+    { day: "Mandag - Tirsdag", time: "Stengt" },
+    { day: "Onsdag - Fredag", time: "10:00 - 18:00" },
+    { day: "Lørdag", time: "10:00 - 16:00" },
+    { day: "Søndag", time: "12:00 - 16:00" }
   ];
 
   return (
@@ -41,10 +41,10 @@ const Contact = () => {
       {/* Header */}
       <PageHero>
         <div className="text-center">
-          <h1 className="nordic-heading mb-4">Visit Our Studio</h1>
+          <h1 className="nordic-heading mb-4">Besøk Vårt Studio</h1>
           <p className="nordic-subtitle max-w-2xl mx-auto">
-            Located in the heart of Oslo, our studio welcomes art enthusiasts, 
-            students, and collectors. Come experience Nordic creativity firsthand.
+            Lokalisert i hjertet av Oslo, vårt studio ønsker kunstentusiaster, 
+            studenter og samlere velkommen. Kom og opplev nordisk kreativitet på nært hold.
           </p>
         </div>
       </PageHero>
@@ -56,7 +56,7 @@ const Contact = () => {
             {/* Contact Details */}
             <div className="space-y-8">
               <div>
-                <h2 className="nordic-heading mb-8">Get in Touch</h2>
+                <h2 className="nordic-heading mb-8">Ta Kontakt</h2>
                 
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
@@ -81,7 +81,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
                   <Clock className="w-6 h-6 mr-3 text-primary" />
-                  Opening Hours
+                  Åpningstider
                 </h3>
                 
                 <div className="space-y-3">
@@ -98,69 +98,69 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="nordic-card">
               <div className="p-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">Send us a Message</h3>
+                <h3 className="text-2xl font-semibold text-foreground mb-6">Send oss en Melding</h3>
                 
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        First Name
+                        Fornavn
                       </label>
                       <input
                         type="text"
                         className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                        placeholder="Your first name"
+                        placeholder="Ditt fornavn"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        Last Name
+                        Etternavn
                       </label>
                       <input
                         type="text"
                         className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                        placeholder="Your last name"
+                        placeholder="Ditt etternavn"
                       />
                     </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Email
+                      E-post
                     </label>
                     <input
                       type="email"
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="your.email@example.com"
+                      placeholder="din.epost@eksempel.no"
                     />
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Interest
+                      Interesse
                     </label>
                     <select className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
-                      <option>Art Classes</option>
-                      <option>Custom Commission</option>
-                      <option>Gallery Visit</option>
-                      <option>Purchase Artwork</option>
-                      <option>Other</option>
+                      <option>Kunstkurs</option>
+                      <option>Tilpasset Bestilling</option>
+                      <option>Galleribesøk</option>
+                      <option>Kjøp Kunstverk</option>
+                      <option>Annet</option>
                     </select>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Message
+                      Melding
                     </label>
                     <textarea
                       rows={4}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
-                      placeholder="Tell us about your interest in our studio..."
+                      placeholder="Fortell oss om din interesse for vårt studio..."
                     ></textarea>
                   </div>
                   
                   <button type="submit" className="nordic-button-primary w-full">
-                    Send Message
+                    Send Melding
                   </button>
                 </form>
               </div>
@@ -173,9 +173,9 @@ const Contact = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="nordic-heading mb-4">Find Our Studio</h2>
+            <h2 className="nordic-heading mb-4">Finn Vårt Studio</h2>
             <p className="nordic-subtitle">
-              Located in Oslo's vibrant arts district, easily accessible by public transport.
+              Lokalisert i Oslos pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.
             </p>
           </div>
           
@@ -183,8 +183,8 @@ const Contact = () => {
             <div className="h-96 bg-nordic-mist flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                <p className="text-foreground font-medium">Interactive Map</p>
-                <p className="nordic-body">Kunstnergata 15, 0150 Oslo, Norway</p>
+                <p className="text-foreground font-medium">Interaktivt Kart</p>
+                <p className="nordic-body">Kunstnergata 15, 0150 Oslo, Norge</p>
               </div>
             </div>
           </div>

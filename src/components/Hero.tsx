@@ -21,16 +21,16 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              Where Art Meets
+              Hvor Kunst Møter
               <span className="block bg-gradient-to-r from-primary to-nordic-forest bg-clip-text text-transparent">
-                Nordic Soul
+                Nordisk Sjel
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover contemporary art and creative expression in the heart of Norway. 
-              Our studio celebrates the intersection of modern artistry and timeless Nordic beauty, 
-              creating spaces where creativity flourishes.
+              Oppdag samtidskunst og kreativt uttrykk i hjertet av Norge. 
+              Vårt studio feirer møtet mellom moderne kunstnerskap og tidløs nordisk skjønnhet, 
+              og skaper rom hvor kreativiteten blomstrer.
             </p>
           </div>
 
@@ -39,13 +39,13 @@ const Hero = () => {
               to="/gallery"
               className="px-10 py-5 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Explore Gallery
+              Utforsk Galleri
             </Link>
             <Link 
               to="/services"
               className="px-10 py-5 bg-gradient-to-r from-secondary to-nordic-sage text-white rounded-xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Join Classes
+              Bli Med På Kurs
             </Link>
           </div>
 
@@ -53,15 +53,15 @@ const Hero = () => {
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground mb-2">20+</div>
-              <div className="text-muted-foreground">Years Experience</div>
+              <div className="text-muted-foreground">År Erfaring</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground mb-2">200+</div>
-              <div className="text-muted-foreground">Artworks Created</div>
+              <div className="text-muted-foreground">Kunstverk Skapt</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground mb-2">50+</div>
-              <div className="text-muted-foreground">Exhibitions</div>
+              <div className="text-muted-foreground">Utstillinger</div>
             </div>
           </div>
         </div>
