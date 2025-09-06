@@ -7,7 +7,7 @@ const Gallery = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
-    document.title = "Kunstgalleri | Nordic Art Studio";
+    document.title = "Kunstgalleri | tonsbergkunstroom";
     const content = "Utforsk samtids nordisk kunst: kuratert samling av landskap, abstrakt og mixed media.";
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDesc) {
