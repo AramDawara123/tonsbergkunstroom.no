@@ -29,48 +29,48 @@ interface CourseData {
 const coursesData: { [key: string]: CourseData } = {
   'beginners-watercolor': {
     id: 'beginners-watercolor',
-    title: "Beginner's Watercolor",
-    duration: "2 hours",
-    capacity: "8 students",
+    title: "Nybegynner Akvarell",
+    duration: "2 timer",
+    capacity: "8 studenter",
     price: "450 NOK",
-    description: "Learn the fundamentals of watercolor painting with Nordic landscape themes.",
-    schedule: "Saturdays 10:00-12:00",
-    fullDescription: "Discover the beauty of watercolor painting in our comprehensive beginner's course. Perfect for those who have never picked up a brush or want to refresh their skills. You'll learn essential techniques including wet-on-wet, wet-on-dry, color mixing, and composition while creating stunning Nordic-inspired landscapes.",
+    description: "Lær grunnleggende akvarellmaling med nordiske landskapstemaer.",
+    schedule: "Lørdager 10:00-12:00",
+    fullDescription: "Oppdag skjønnheten av akvarellmaling i vårt omfattende nybegynnerkurs. Perfekt for de som aldri har tatt opp en pensel eller ønsker å friske opp ferdighetene sine. Du lærer essensielle teknikker inkludert våt-på-våt, våt-på-tørr, fargeblanding og komposisjon mens du skaper fantastiske nordisk-inspirerte landskap.",
     image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     instructor: "Elena Nordström",
-    level: "Beginner",
-    includes: ["All painting materials", "Canvas and paper", "Professional guidance", "Take-home artwork", "Coffee and pastries"],
-    nextStartDate: "March 2, 2024"
+    level: "Nybegynner",
+    includes: ["Alle malemateriell", "Lerret og papir", "Profesjonell veiledning", "Ta-med-hjem kunstverk", "Kaffe og bakverk"],
+    nextStartDate: "2. mars 2024"
   },
   'advanced-oil-painting': {
     id: 'advanced-oil-painting',
-    title: "Advanced Oil Painting",
-    duration: "3 hours",
-    capacity: "6 students",
+    title: "Avansert Oljemaleri",
+    duration: "3 timer",
+    capacity: "6 studenter",
     price: "650 NOK",
-    description: "Master advanced techniques in oil painting and color theory.",
-    schedule: "Wednesdays 14:00-17:00",
-    fullDescription: "Take your oil painting skills to the next level with advanced techniques and professional methods. This intensive course covers advanced color theory, glazing techniques, texture creation, and composition mastery. Perfect for artists ready to create gallery-quality pieces.",
+    description: "Mestre avanserte teknikker innen oljemaleri og fargeteori.",
+    schedule: "Onsdager 14:00-17:00",
+    fullDescription: "Ta oljemalingsferdighetene dine til neste nivå med avanserte teknikker og profesjonelle metoder. Dette intensive kurset dekker avansert fargeteori, glasur-teknikker, teksturskaping og komposisjonsmestring. Perfekt for kunstnere klare til å skape gallerikvalitetsverk.",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     instructor: "Magnus Larsson",
-    level: "Advanced",
-    includes: ["Premium oil paints", "Canvas boards", "Professional brushes", "Palette knives", "Individual critique sessions"],
-    nextStartDate: "March 6, 2024"
+    level: "Avansert",
+    includes: ["Premium oljefarger", "Lerretsbord", "Profesjonelle pensler", "Palettkniver", "Individuelle kritikksesjoner"],
+    nextStartDate: "6. mars 2024"
   },
   'abstract-expression': {
     id: 'abstract-expression',
-    title: "Abstract Expression",
-    duration: "2.5 hours",
-    capacity: "10 students",
+    title: "Abstrakt Uttrykk",
+    duration: "2.5 timer",
+    capacity: "10 studenter",
     price: "550 NOK",
-    description: "Explore abstract art techniques and find your unique artistic voice.",
-    schedule: "Sundays 13:00-15:30",
-    fullDescription: "Unleash your creativity through abstract expression. This dynamic course encourages experimentation with form, color, and texture to develop your personal artistic style. Learn from contemporary abstract techniques while exploring emotional expression through art.",
+    description: "Utforsk abstrakte kunstteknikker og finn din unike kunstneriske stemme.",
+    schedule: "Søndager 13:00-15:30",
+    fullDescription: "Slipp kreativiteten løs gjennom abstrakt uttrykk. Dette dynamiske kurset oppmuntrer til eksperimentering med form, farge og tekstur for å utvikle din personlige kunstneriske stil. Lær fra samtidige abstrakte teknikker mens du utforsker emosjonelt uttrykk gjennom kunst.",
     image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     instructor: "Astrid Bjørk",
-    level: "Intermediate",
-    includes: ["Mixed media supplies", "Large format paper", "Acrylic paints", "Texture mediums", "Portfolio review"],
-    nextStartDate: "March 3, 2024"
+    level: "Mellomliggende",
+    includes: ["Blandede medier utstyr", "Storformat papir", "Akrylfarger", "Teksturmedier", "Porteføljeanmeldelse"],
+    nextStartDate: "3. mars 2024"
   }
 };
 
@@ -95,9 +95,9 @@ const CourseDetails = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">Course Not Found</h1>
+          <h1 className="text-2xl font-bold text-foreground mb-4">Kurs Ikke Funnet</h1>
           <Link to="/services" className="nordic-button-primary">
-            Back to Classes
+            Tilbake til Kurs
           </Link>
         </div>
       </div>
@@ -109,7 +109,7 @@ const CourseDetails = () => {
     
     // Simulate form submission
     setTimeout(() => {
-      toast.success("Registration submitted successfully! We'll contact you soon.");
+      toast.success("Påmelding sendt! Vi kontakter deg snart.");
       form.reset();
       setIsSubmitting(false);
     }, 2000);
@@ -127,13 +127,13 @@ const CourseDetails = () => {
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Classes
+            Tilbake til Kurs
           </Link>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                {course.level} Level
+                {course.level} Nivå
               </div>
               
               <h1 className="nordic-heading mb-6">{course.title}</h1>
@@ -144,15 +144,15 @@ const CourseDetails = () => {
                   <Clock className="w-5 h-5 text-primary" />
                   <div>
                     <div className="font-semibold text-foreground">{course.duration}</div>
-                    <div className="text-sm text-muted-foreground">Duration</div>
+                    <div className="text-sm text-muted-foreground">Varighet</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <Users className="w-5 h-5 text-primary" />
                   <div>
-                    <div className="font-semibold text-foreground">Max {course.capacity}</div>
-                    <div className="text-sm text-muted-foreground">Class Size</div>
+                    <div className="font-semibold text-foreground">Maks {course.capacity}</div>
+                    <div className="text-sm text-muted-foreground">Klassestørrelse</div>
                   </div>
                 </div>
                 
@@ -160,22 +160,22 @@ const CourseDetails = () => {
                   <Calendar className="w-5 h-5 text-primary" />
                   <div>
                     <div className="font-semibold text-foreground">{course.schedule}</div>
-                    <div className="text-sm text-muted-foreground">Weekly Schedule</div>
+                    <div className="text-sm text-muted-foreground">Ukentlig Timeplan</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-primary" />
                   <div>
-                    <div className="font-semibold text-foreground">Studio Location</div>
-                    <div className="text-sm text-muted-foreground">Oslo, Norway</div>
+                    <div className="font-semibold text-foreground">Studioplassering</div>
+                    <div className="text-sm text-muted-foreground">Oslo, Norge</div>
                   </div>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
                 <div className="text-3xl font-bold text-primary">{course.price}</div>
-                <div className="text-muted-foreground">per class</div>
+                <div className="text-muted-foreground">per klasse</div>
               </div>
             </div>
             
@@ -198,7 +198,7 @@ const CourseDetails = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="nordic-heading mb-8">What's Included</h2>
+              <h2 className="nordic-heading mb-8">Hva som er Inkludert</h2>
               <div className="space-y-4">
                 {course.includes.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -209,16 +209,16 @@ const CourseDetails = () => {
               </div>
               
               <div className="mt-8 p-6 nordic-card">
-                <h3 className="text-xl font-semibold text-foreground mb-2">Your Instructor</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Din Instruktør</h3>
                 <p className="text-lg font-medium text-primary mb-2">{course.instructor}</p>
-                <p className="nordic-body">Professional artist with over 15 years of experience in Nordic-inspired art and teaching.</p>
+                <p className="nordic-body">Profesjonell kunstner med over 15 års erfaring innen nordisk-inspirert kunst og undervisning.</p>
               </div>
             </div>
             
             {/* Registration Form */}
             <div className="nordic-card p-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-2">Register for This Class</h2>
-              <p className="text-muted-foreground mb-6">Next class starts: {course.nextStartDate}</p>
+              <h2 className="text-2xl font-semibold text-foreground mb-2">Meld Deg På Dette Kurset</h2>
+              <p className="text-muted-foreground mb-6">Neste kurs starter: {course.nextStartDate}</p>
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -228,9 +228,9 @@ const CourseDetails = () => {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>Fornavn</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your first name" {...field} />
+                            <Input placeholder="Skriv inn ditt fornavn" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -242,9 +242,9 @@ const CourseDetails = () => {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Last Name</FormLabel>
+                          <FormLabel>Etternavn</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your last name" {...field} />
+                            <Input placeholder="Skriv inn ditt etternavn" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -256,13 +256,13 @@ const CourseDetails = () => {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="Enter your email" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    <FormItem>
+                      <FormLabel>E-post</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="Skriv inn din e-post" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                     )}
                   />
                   
@@ -270,13 +270,13 @@ const CourseDetails = () => {
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your phone number" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    <FormItem>
+                      <FormLabel>Telefonnummer</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Skriv inn ditt telefonnummer" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                     )}
                   />
                   
@@ -284,13 +284,13 @@ const CourseDetails = () => {
                     control={form.control}
                     name="experience"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Previous Art Experience</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Brief description of your experience" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    <FormItem>
+                      <FormLabel>Tidligere Kunsterfaring</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Kort beskrivelse av din erfaring" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                     )}
                   />
                   
@@ -298,13 +298,13 @@ const CourseDetails = () => {
                     control={form.control}
                     name="message"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Additional Message (Optional)</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Any questions or special requirements?" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    <FormItem>
+                      <FormLabel>Tilleggsmelding (Valgfritt)</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Spørsmål eller spesielle krav?" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                     )}
                   />
                   
@@ -313,7 +313,7 @@ const CourseDetails = () => {
                     className="w-full nordic-button-primary" 
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Register Now'}
+                    {isSubmitting ? 'Sender inn...' : 'Meld Deg På Nå'}
                   </Button>
                 </form>
               </Form>

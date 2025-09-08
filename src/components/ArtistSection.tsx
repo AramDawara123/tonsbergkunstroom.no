@@ -7,20 +7,20 @@ const ArtistSection = () => {
   const achievements = [
     {
       icon: <Palette className="w-6 h-6" />,
-      title: "20+ Years",
-      description: "Of artistic mastery and innovation",
+      title: "20+ År",
+      description: "Av kunstnerisk mestring og innovasjon",
       color: "from-primary to-nordic-forest"
     },
     {
       icon: <Award className="w-6 h-6" />,
-      title: "50+ Exhibitions",
-      description: "Across Scandinavia and Europe",
+      title: "50+ Utstillinger",
+      description: "Gjennom Skandinavia og Europa",
       color: "from-secondary to-nordic-sage"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "200+ Students",
-      description: "Inspired and mentored to excellence",
+      title: "200+ Studenter",
+      description: "Inspirert og veiledet til fortreffelighet",
       color: "from-nordic-sky to-nordic-deep"
     }
   ];
@@ -34,7 +34,7 @@ const ArtistSection = () => {
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium border border-primary/20">
               <Star className="w-4 h-4 fill-current" />
-              <span>Featured Artist</span>
+              <span>Utvalgt Kunstner</span>
             </div>
             
             {/* Title Section */}
@@ -46,19 +46,19 @@ const ArtistSection = () => {
               </h2>
               <div className="flex items-center gap-2 text-nordic-stone">
                 <MapPin className="w-4 h-4" />
-                <span className="text-lg font-medium">Contemporary Nordic Artist</span>
+                <span className="text-lg font-medium">Samtida Nordisk Kunstner</span>
               </div>
             </div>
             
             {/* Description */}
             <div className="space-y-4">
               <p className="text-lg leading-relaxed text-nordic-stone">
-                Born and raised in the breathtaking landscapes of northern Norway, Astrid draws inspiration 
-                from the ever-changing Nordic seasons and the profound stillness of Arctic winters.
+                Født og oppvokst i de betagende landskapene i Nord-Norge, henter Astrid inspirasjon 
+                fra de stadig skiftende nordiske årstidene og den dype stillheten i arktiske vintre.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Her contemporary approach creates a unique dialogue between past and present, inviting viewers 
-                to discover new perspectives on familiar landscapes.
+                Hennes samtidige tilnærming skaper en unik dialog mellom fortid og nåtid, og inviterer betraktere 
+                til å oppdage nye perspektiver på kjente landskap.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ const ArtistSection = () => {
                 to="/gallery"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group"
               >
-                <span>Explore Astrid's Journey</span>
+                <span>Utforsk Astrids Kunstnerreise</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -105,7 +105,7 @@ const ArtistSection = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1940&q=80"
-                  alt="Artist at work"
+                  alt="Kunstner i arbeid"
                   className="w-full h-[500px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
@@ -114,8 +114,8 @@ const ArtistSection = () => {
               {/* Floating Stats Card */}
               <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-xl p-6 shadow-xl border border-white/20">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">Master</div>
-                  <div className="text-sm text-muted-foreground">Since 2004</div>
+                  <div className="text-3xl font-bold text-primary mb-1">Mester</div>
+                  <div className="text-sm text-muted-foreground">Siden 2004</div>
                 </div>
               </div>
 

@@ -5,22 +5,22 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Emma Larsson",
-      role: "Art Enthusiast",
-      content: "Astrid's Nordic art style has completely transformed how I see contemporary art. Her pieces bring such serenity and depth to my home.",
+      role: "Kunstentusiast",
+      content: "Astrids nordiske kunststil har helt forvandlet hvordan jeg ser på samtidskunst. Verkene hennes bringer slik ro og dybde til hjemmet mitt.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
       name: "Marcus Nielsen",
-      role: "Gallery Owner",
-      content: "Working with Astrid has been exceptional. Her understanding of Nordic aesthetics and modern techniques creates truly unique pieces.",
+      role: "Gallerieier",
+      content: "Å jobbe med Astrid har vært eksepsjonelt. Hennes forståelse av nordisk estetikk og moderne teknikker skaper virkelig unike verk.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
       name: "Sofia Andersson",
-      role: "Art Student",
-      content: "The art classes here are incredible. Astrid's teaching method combines traditional Nordic techniques with contemporary innovation.",
+      role: "Kunststudent",
+      content: "Kunstkursene her er utrolige. Astrids undervisningsmetode kombinerer tradisjonelle nordiske teknikker med samtidig innovasjon.",
       rating: 5,
       image: "/placeholder.svg"
     }
@@ -35,10 +35,10 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="nordic-heading text-4xl md:text-5xl font-bold mb-6">
-            What People Say
+            Hva Folk Sier
           </h2>
           <p className="nordic-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover how our Nordic-inspired art and classes have touched the hearts and homes of our community.
+            Oppdag hvordan vår nordisk-inspirerte kunst og kurs har berørt hjertene og hjemmene til vårt fellesskap.
           </p>
         </div>
 
@@ -95,13 +95,13 @@ const TestimonialsSection = () => {
         <div className="text-center mt-16">
           <div className="nordic-card p-8 max-w-2xl mx-auto">
             <h3 className="nordic-heading text-2xl font-bold mb-4">
-              Join Our Art Community
+              Bli Med i Vårt Kunstfellesskap
             </h3>
             <p className="nordic-body text-muted-foreground mb-6">
-              Experience the beauty of Nordic-inspired art and become part of our creative family.
+              Opplev skjønnheten av nordisk-inspirert kunst og bli en del av vår kreative familie.
             </p>
             <button className="nordic-button-primary px-8 py-3">
-              Start Your Journey
+              Start Din Reise
             </button>
           </div>
         </div>
