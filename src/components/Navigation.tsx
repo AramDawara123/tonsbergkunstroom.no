@@ -34,7 +34,8 @@ const Navigation = () => {
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-primary to-nordic-forest flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
               <Palette className="w-5 h-5" />
             </div>
-            <span className="hidden sm:block">tonsbergkunstrom</span>
+            <span className="hidden sm:block">Kunstromtonsberg
+          </span>
           </Link>
 
           {/* Desktop Navigation */}
