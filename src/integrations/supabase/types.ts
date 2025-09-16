@@ -98,6 +98,150 @@ export type Database = {
         }
         Relationships: []
       }
+      artist_profile: {
+        Row: {
+          awards: string[] | null
+          bio: string | null
+          contact_email: string | null
+          contact_phone: string | null
+          created_at: string
+          education: string[] | null
+          exhibitions: string[] | null
+          id: string
+          is_active: boolean | null
+          name: string
+          profile_image_url: string | null
+          social_media: Json | null
+          updated_at: string
+          years_experience: number | null
+        }
+        Insert: {
+          awards?: string[] | null
+          bio?: string | null
+          contact_email?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          education?: string[] | null
+          exhibitions?: string[] | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          profile_image_url?: string | null
+          social_media?: Json | null
+          updated_at?: string
+          years_experience?: number | null
+        }
+        Update: {
+          awards?: string[] | null
+          bio?: string | null
+          contact_email?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          education?: string[] | null
+          exhibitions?: string[] | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          profile_image_url?: string | null
+          social_media?: Json | null
+          updated_at?: string
+          years_experience?: number | null
+        }
+        Relationships: []
+      }
+      artist_testimonials: {
+        Row: {
+          client_image_url: string | null
+          client_name: string
+          client_role: string | null
+          course_taken: string | null
+          created_at: string
+          id: string
+          is_active: boolean | null
+          is_featured: boolean | null
+          rating: number | null
+          testimonial_text: string
+        }
+        Insert: {
+          client_image_url?: string | null
+          client_name: string
+          client_role?: string | null
+          course_taken?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          is_featured?: boolean | null
+          rating?: number | null
+          testimonial_text: string
+        }
+        Update: {
+          client_image_url?: string | null
+          client_name?: string
+          client_role?: string | null
+          course_taken?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          is_featured?: boolean | null
+          rating?: number | null
+          testimonial_text?: string
+        }
+        Relationships: []
+      }
+      artworks: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          dimensions: string | null
+          id: string
+          image_url: string
+          is_active: boolean
+          is_featured: boolean | null
+          is_for_sale: boolean | null
+          medium: string | null
+          price: number | null
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+          year: number | null
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          dimensions?: string | null
+          id?: string
+          image_url: string
+          is_active?: boolean
+          is_featured?: boolean | null
+          is_for_sale?: boolean | null
+          medium?: string | null
+          price?: number | null
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+          year?: number | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          dimensions?: string | null
+          id?: string
+          image_url?: string
+          is_active?: boolean
+          is_featured?: boolean | null
+          is_for_sale?: boolean | null
+          medium?: string | null
+          price?: number | null
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+          year?: number | null
+        }
+        Relationships: []
+      }
       benefits: {
         Row: {
           created_at: string
@@ -164,6 +308,39 @@ export type Database = {
           is_active?: boolean | null
           sort_order?: number | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_read: boolean | null
+          message: string
+          name: string
+          phone: string | null
+          subject: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_read?: boolean | null
+          message: string
+          name: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          name?: string
+          phone?: string | null
+          subject?: string | null
         }
         Relationships: []
       }
@@ -244,6 +421,119 @@ export type Database = {
           sort_order?: number | null
           subtitle?: string | null
           title?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      course_registrations: {
+        Row: {
+          course_id: string
+          created_at: string
+          email: string
+          experience_level: string | null
+          first_name: string
+          id: string
+          last_name: string
+          payment_status: string | null
+          phone: string | null
+          registration_date: string
+          special_requests: string | null
+        }
+        Insert: {
+          course_id: string
+          created_at?: string
+          email: string
+          experience_level?: string | null
+          first_name: string
+          id?: string
+          last_name: string
+          payment_status?: string | null
+          phone?: string | null
+          registration_date?: string
+          special_requests?: string | null
+        }
+        Update: {
+          course_id?: string
+          created_at?: string
+          email?: string
+          experience_level?: string | null
+          first_name?: string
+          id?: string
+          last_name?: string
+          payment_status?: string | null
+          phone?: string | null
+          registration_date?: string
+          special_requests?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_registrations_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      courses: {
+        Row: {
+          created_at: string
+          description: string
+          duration: string
+          end_date: string | null
+          full_description: string | null
+          id: string
+          image_url: string | null
+          instructor_name: string | null
+          is_active: boolean
+          level: string
+          materials_included: string[] | null
+          max_participants: number
+          prerequisites: string | null
+          price: number
+          schedule: string | null
+          start_date: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          duration: string
+          end_date?: string | null
+          full_description?: string | null
+          id?: string
+          image_url?: string | null
+          instructor_name?: string | null
+          is_active?: boolean
+          level: string
+          materials_included?: string[] | null
+          max_participants?: number
+          prerequisites?: string | null
+          price: number
+          schedule?: string | null
+          start_date?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          duration?: string
+          end_date?: string | null
+          full_description?: string | null
+          id?: string
+          image_url?: string | null
+          instructor_name?: string | null
+          is_active?: boolean
+          level?: string
+          materials_included?: string[] | null
+          max_participants?: number
+          prerequisites?: string | null
+          price?: number
+          schedule?: string | null
+          start_date?: string | null
+          title?: string
           updated_at?: string
         }
         Relationships: []
