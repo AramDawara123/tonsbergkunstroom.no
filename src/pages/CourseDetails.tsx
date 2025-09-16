@@ -9,6 +9,7 @@ import { Input } from '../components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../components/ui/form';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import { supabase } from '../integrations/supabase/client';
 
 interface CourseData {
   id: string;
@@ -107,12 +108,29 @@ const CourseDetails = () => {
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Påmelding sendt! Vi kontakter deg snart.");
+    try {
+      const registrationData = {
+        ...data,
+        courseId: course.id,
+        courseTitle: course.title,
+        coursePrice: course.price,
+        nextStartDate: course.nextStartDate
+      };
+
+      const { data: result, error } = await supabase.functions.invoke('send-course-registration', {
+        body: registrationData
+      });
+
+      if (error) throw error;
+
+      toast.success("Påmelding sendt! Vi kontakter deg snart med kursdetaljer.");
       form.reset();
+    } catch (error: any) {
+      console.error('Error submitting course registration:', error);
+      toast.error("Det oppstod en feil ved påmelding. Prøv igjen.");
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   return (

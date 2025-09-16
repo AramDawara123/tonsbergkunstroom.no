@@ -1,11 +1,60 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageHero from '../components/PageHero';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { supabase } from '../integrations/supabase/client';
+import { toast } from 'sonner';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      toast.error("Vennligst fyll ut alle obligatoriske felt");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast.success("Melding sendt! Vi kontakter deg snart.");
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error: any) {
+      console.error('Error sending contact form:', error);
+      toast.error("Det oppstod en feil ved sending av melding. Prøv igjen.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
@@ -100,24 +149,32 @@ const Contact = () => {
               <div className="p-8">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">Send oss en Melding</h3>
                 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        Fornavn
+                        Fornavn *
                       </label>
                       <input
                         type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                         placeholder="Ditt fornavn"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        Etternavn
+                        Etternavn *
                       </label>
                       <input
                         type="text"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                         placeholder="Ditt etternavn"
                       />
@@ -126,10 +183,14 @@ const Contact = () => {
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      E-post
+                      E-post *
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                       placeholder="din.epost@eksempel.no"
                     />
@@ -139,28 +200,42 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Interesse
                     </label>
-                    <select className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
-                      <option>Kunstkurs</option>
-                      <option>Tilpasset Bestilling</option>
-                      <option>Galleribesøk</option>
-                      <option>Kjøp Kunstverk</option>
-                      <option>Annet</option>
+                    <select 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                    >
+                      <option value="">Velg interesse</option>
+                      <option value="Kunstkurs">Kunstkurs</option>
+                      <option value="Tilpasset Bestilling">Tilpasset Bestilling</option>
+                      <option value="Galleribesøk">Galleribesøk</option>
+                      <option value="Kjøp Kunstverk">Kjøp Kunstverk</option>
+                      <option value="Annet">Annet</option>
                     </select>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Melding
+                      Melding *
                     </label>
                     <textarea
                       rows={4}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
                       placeholder="Fortell oss om din interesse for vårt studio..."
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="nordic-button-primary w-full">
-                    Send Melding
+                  <button 
+                    type="submit" 
+                    className="nordic-button-primary w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sender...' : 'Send Melding'}
                   </button>
                 </form>
               </div>
