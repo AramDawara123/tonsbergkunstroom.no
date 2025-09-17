@@ -79,7 +79,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification to studio
     const studioEmailResponse = await resend.emails.send({
       from: "Nordic Art Studio <onboarding@resend.dev>",
-      to: ["hello@nordicart.no"],
+      to: ["info@kunstromtonsberg.no"],
       subject: `Ny henvendelse fra ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
