@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Nordic Art Studio Design System */
+/* kunstromtonsberg Design System */
 @layer base {
   :root {
     /* Core Nordic Palette - HSL only */

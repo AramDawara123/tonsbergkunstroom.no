@@ -59,8 +59,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "E-post",
-      value: "hello@nordicart.no",
-      link: "mailto:hello@nordicart.no"
+      value: "info@kunstromtonsberg.no",
+      link: "mailto:info@kunstromtonsberg.no"
     },
     {
       icon: <Phone className="w-6 h-6" />,

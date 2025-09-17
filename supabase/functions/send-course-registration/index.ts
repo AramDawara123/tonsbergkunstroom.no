@@ -97,7 +97,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
-      from: "Nordic Art Studio <onboarding@resend.dev>",
+      from: "kunstromtonsberg <onboarding@resend.dev>",
       to: [email],
       subject: `Påmelding bekreftet: ${courseTitle}`,
       html: `
@@ -126,13 +126,13 @@ const handler = async (req: Request): Promise<Response> => {
             </ul>
           </div>
           
-          <p>Hvis du har spørsmål, ikke nøl med å kontakte oss på hello@nordicart.no eller +47 123 45 678.</p>
+          <p>Hvis du har spørsmål, ikke nøl med å kontakte oss på info@kunstromtonsberg.no eller +47 123 45 678.</p>
           <p>Vi gleder oss til å møte deg!</p>
-          <p>Med vennlig hilsen,<br>Nordic Art Studio Team</p>
+          <p>Med vennlig hilsen,<br>kunstromtonsberg Team</p>
           
           <div style="border-top: 1px solid #e5e7eb; margin-top: 30px; padding-top: 20px; color: #6b7280; font-size: 14px;">
-            <p>Nordic Art Studio - Kunstnergata 15, 0150 Oslo, Norge</p>
-            <p>E-post: hello@nordicart.no | Telefon: +47 123 45 678</p>
+            <p>kunstromtonsberg - Tonsberg, Norway</p>
+            <p>E-post: info@kunstromtonsberg.no | Telefon: +47 123 45 678</p>
           </div>
         </div>
       `,
@@ -140,8 +140,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification to studio
     const studioEmailResponse = await resend.emails.send({
-      from: "Nordic Art Studio <onboarding@resend.dev>",
-      to: ["hello@nordicart.no"],
+      from: "kunstromtonsberg <onboarding@resend.dev>",
+      to: ["info@kunstromtonsberg.no"],
       subject: `Ny kurspåmelding: ${courseTitle} - ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
