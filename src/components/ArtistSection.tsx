@@ -1,32 +1,24 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, Award, Users, ArrowRight, Star, MapPin } from 'lucide-react';
-
 const ArtistSection = () => {
-  const achievements = [
-    {
-      icon: <Palette className="w-6 h-6" />,
-      title: "20+ År",
-      description: "Av kunstnerisk mestring og innovasjon",
-      color: "from-primary to-nordic-forest"
-    },
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: "50+ Utstillinger",
-      description: "Gjennom Skandinavia og Europa",
-      color: "from-secondary to-nordic-sage"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "200+ Studenter",
-      description: "Inspirert og veiledet til fortreffelighet",
-      color: "from-nordic-sky to-nordic-deep"
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-muted">
+  const achievements = [{
+    icon: <Palette className="w-6 h-6" />,
+    title: "20+ År",
+    description: "Av kunstnerisk mestring og innovasjon",
+    color: "from-primary to-nordic-forest"
+  }, {
+    icon: <Award className="w-6 h-6" />,
+    title: "50+ Utstillinger",
+    description: "Gjennom Skandinavia og Europa",
+    color: "from-secondary to-nordic-sage"
+  }, {
+    icon: <Users className="w-6 h-6" />,
+    title: "200+ Studenter",
+    description: "Inspirert og veiledet til fortreffelighet",
+    color: "from-nordic-sky to-nordic-deep"
+  }];
+  return <section className="py-24 bg-muted">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Content Section */}
@@ -63,35 +55,11 @@ const ArtistSection = () => {
             </div>
 
             {/* Achievement Cards - Modern Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-2xl p-6 bg-white/80 backdrop-blur-sm border border-white/20 hover:bg-white/90 transition-all duration-300 cursor-pointer text-center"
-                >
-                  <div className="space-y-3">
-                    <div className={`w-12 h-12 mx-auto rounded-xl bg-gradient-to-br ${achievement.color} text-white shadow-sm flex items-center justify-center`}>
-                      {achievement.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-1">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {achievement.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            
 
             {/* CTA Button */}
             <div className="pt-4">
-              <Link 
-                to="/gallery"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group"
-              >
+              <Link to="/gallery" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group">
                 <span>Utforsk Astrids Kunstnerreise</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -103,11 +71,7 @@ const ArtistSection = () => {
             <div className="relative group">
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1940&q=80"
-                  alt="Kunstner i arbeid"
-                  className="w-full h-[500px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1940&q=80" alt="Kunstner i arbeid" className="w-full h-[500px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
               
@@ -127,8 +91,6 @@ const ArtistSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ArtistSection;
