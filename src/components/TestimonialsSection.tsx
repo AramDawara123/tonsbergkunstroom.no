@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
   }];
   return <section className="py-20 bg-gradient-to-b from-background to-background/50 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 nordic-texture opacity-30"></div>
+      
       
       
       <div className="container mx-auto px-6 relative z-10">
