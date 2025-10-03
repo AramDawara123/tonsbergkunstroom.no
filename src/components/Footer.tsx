@@ -9,8 +9,12 @@ const Footer = () => {
             <h3 className="text-2xl font-display font-bold mb-4">Kunstrom Tønsberg</h3>
             <p className="text-nordic-ash mb-6 max-w-md">Skaper og deler skjønnheten av Tønsberg kunst i hjertet av Norge. Bli med oss på en reise med kunstnerisk oppdagelse og kreativt uttrykk.</p>
             <div className="flex space-x-4">
-              <Instagram className="w-6 h-6 text-nordic-ash hover:text-nordic-birch cursor-pointer transition-colors" />
-              <Facebook className="w-6 h-6 text-nordic-ash hover:text-nordic-birch cursor-pointer transition-colors" />
+              <a href="https://www.instagram.com/kunstrom.t?igsh=MWRpeTZzbjdwcTc1Zg==" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                <Instagram className="w-6 h-6 text-nordic-ash hover:text-nordic-birch cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.facebook.com/share/1CLqWaq93U/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                <Facebook className="w-6 h-6 text-nordic-ash hover:text-nordic-birch cursor-pointer transition-colors" />
+              </a>
             </div>
           </div>
 
