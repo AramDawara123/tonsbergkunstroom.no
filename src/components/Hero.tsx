@@ -32,20 +32,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-foreground mb-2">20+</div>
-              <div className="text-muted-foreground">År Erfaring</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-foreground mb-2">200+</div>
-              <div className="text-muted-foreground">Kunstverk Skapt</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-foreground mb-2">50+</div>
-              <div className="text-muted-foreground">Utstillinger</div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Scroll indicator */}
