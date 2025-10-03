@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Eye, Heart, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const FeaturedWorks = () => {
   const artworks = [{
     id: 1,
@@ -29,9 +27,7 @@ const FeaturedWorks = () => {
     year: "2023",
     description: "Feirer den lengste natten og tilbakevendende lys"
   }];
-
-  return (
-    <section className="py-24 bg-muted">
+  return <section className="py-24 bg-muted">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -44,18 +40,13 @@ const FeaturedWorks = () => {
 
         {/* Artwork Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {artworks.map((artwork, index) => (
-            <div key={artwork.id} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+          {artworks.map((artwork, index) => <div key={artwork.id} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
               {/* Image Container */}
               <div className="relative aspect-square overflow-hidden">
-                <img 
-                  src={artwork.image} 
-                  alt={artwork.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
+                <img src={artwork.image} alt={artwork.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
                 
                 {/* Floating Actions */}
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -91,16 +82,12 @@ const FeaturedWorks = () => {
                   {artwork.description}
                 </p>
                 
-                <Link 
-                  to="/gallery"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors w-full justify-center group/btn"
-                >
+                <Link to="/gallery" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors w-full justify-center group/btn">
                   <span>Se Detaljer</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* CTA Section */}
@@ -112,17 +99,12 @@ const FeaturedWorks = () => {
             <p className="text-muted-foreground mb-6 max-w-md">
               Oppdag over 100 unike kunstverk som spenner over ulike medier og nordiske temaer.
             </p>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
-            >
+            <Link to="/gallery" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium hover:shadow-xl hover:shadow-primary/25 transition-all duration-300">
               Besøk Fullt Galleri
             </Link>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FeaturedWorks;
