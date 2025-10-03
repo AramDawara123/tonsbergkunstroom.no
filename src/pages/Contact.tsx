@@ -62,12 +62,12 @@ const Contact = () => {
   }, {
     icon: <Phone className="w-6 h-6" />,
     label: "Telefon",
-    value: "+47 123 45 678",
-    link: "tel:+47123456789"
+    value: "+47 92 52 48 23",
+    link: "tel:+4792524823"
   }, {
     icon: <MapPin className="w-6 h-6" />,
     label: "Adresse",
-    value: "Kunstnergata 15, 0150 Oslo, Norge",
+    value: "Peder Lagmanns gate, Tønsberg",
     link: "https://maps.google.com"
   }];
   const hours = [{
@@ -190,13 +190,16 @@ const Contact = () => {
           </div>
           
           <div className="nordic-card overflow-hidden">
-            <div className="h-96 bg-nordic-mist flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                <p className="text-foreground font-medium">Interaktivt Kart</p>
-                <p className="nordic-body">Kunstnergata 15, 0150 Oslo, Norge</p>
-              </div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.65957725552573!2d10.406149569720704!3d59.27219159841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646b716f815349f%3A0x8b8b312a0d6a56f3!2sHertug%20Guthorms%20gate%2025A%2C%203111%20T%C3%B8nsberg%2C%20Noorwegen!5e0!3m2!1snl!2snl!4v1759529994360!5m2!1snl!2snl" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
