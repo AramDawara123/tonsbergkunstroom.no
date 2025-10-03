@@ -184,22 +184,13 @@ const Contact = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="nordic-heading mb-4">Finn Vårt Studio</h2>
-            <p className="nordic-subtitle">
-              Lokalisert i Oslos pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.
-            </p>
+            <p className="nordic-subtitle">Lokalisert i Tønsberg pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.</p>
           </div>
           
           <div className="nordic-card overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.65957725552573!2d10.406149569720704!3d59.27219159841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646b716f815349f%3A0x8b8b312a0d6a56f3!2sHertug%20Guthorms%20gate%2025A%2C%203111%20T%C3%B8nsberg%2C%20Noorwegen!5e0!3m2!1snl!2snl!4v1759529994360!5m2!1snl!2snl" 
-              width="100%" 
-              height="450" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-            />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.65957725552573!2d10.406149569720704!3d59.27219159841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646b716f815349f%3A0x8b8b312a0d6a56f3!2sHertug%20Guthorms%20gate%2025A%2C%203111%20T%C3%B8nsberg%2C%20Noorwegen!5e0!3m2!1snl!2snl!4v1759529994360!5m2!1snl!2snl" width="100%" height="450" style={{
+            border: 0
+          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full" />
           </div>
         </div>
       </section>
