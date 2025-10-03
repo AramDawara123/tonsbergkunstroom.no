@@ -53,9 +53,7 @@ const Services = () => {
           
           
           <h1 className="nordic-heading mb-6">Nordiske Kunstkurs</h1>
-          <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">
-            Fordyp deg i skjønnheten av nordiske kunsttradisjoner med ekspert veiledning og inspirerende studioatmosfære.
-          </p>
+          <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">Kunstrom Tønsberg er et sted som samler kunst og kreativitet. Vi har flere profesjonelle kunstnere som kan starte med deg helt fra begynnelsen og hjelpe deg å finne ditt eget kunstneriske uttrykk. I tillegg tilbyr vi faste kurs for barn og voksene, samt mulighet for egne timer for talentfulle barn eller voksen som ønsker å utvikle ferdighetene sine videre</p>
           
           <div className="flex justify-center gap-8 mt-12 animate-fade-in">
             <div className="text-center">
