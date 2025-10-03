@@ -38,56 +38,25 @@ const FeaturedWorks = () => {
           </p>
         </div>
 
-        {/* Artwork Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {artworks.map((artwork, index) => <div key={artwork.id} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-              {/* Image Container */}
-              <div className="relative aspect-square overflow-hidden">
-                <img src={artwork.image} alt={artwork.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                
-                {/* Overlay */}
-                
-                
-                {/* Floating Actions */}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                    <Heart className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                    <Eye className="w-4 h-4" />
-                  </button>
-                </div>
-
-                {/* Year Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium">
-                  {artwork.year}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {artwork.title}
-                    </h3>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                      {artwork.category}
-                    </span>
-                  </div>
-                  <span className="text-xl font-bold text-primary">{artwork.price}</span>
-                </div>
-                
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {artwork.description}
-                </p>
-                
-                <Link to="/gallery" className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors w-full justify-center group/btn">
-                  <span>Se Detaljer</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>)}
+        {/* No Artwork Available */}
+        <div className="flex flex-col items-center justify-center py-12 mb-16">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 max-w-2xl w-full text-center shadow-lg">
+            <div className="mb-6">
+              <svg className="w-24 h-24 mx-auto text-muted-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-4">Ingen Kunstverk Tilgjengelig</h3>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              Det er ingen kunstverk tilgjengelig for øyeblikket. Vennligst sjekk tilbake snart for nye utstillinger.
+            </p>
+            <Link 
+              to="/contact"
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all duration-300"
+            >
+              Kontakt Oss
+            </Link>
+          </div>
         </div>
 
         {/* CTA Section */}
