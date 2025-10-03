@@ -132,7 +132,7 @@ const Services = () => {
 
       {/* Why Choose Our Courses */}
       <section className="py-20 bg-gradient-to-br from-muted/50 to-background relative overflow-hidden">
-        <div className="absolute inset-0 nordic-texture opacity-20"></div>
+        
         <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-gradient-to-br from-accent/15 to-primary/15 blur-2xl"></div>
         
