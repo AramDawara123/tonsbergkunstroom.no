@@ -62,12 +62,12 @@ const Contact = () => {
   }, {
     icon: <Phone className="w-6 h-6" />,
     label: "Telefon",
-    value: "+47 92 52 48 23",
-    link: "tel:+4792524823"
+    value: "+47 123 45 678",
+    link: "tel:+47123456789"
   }, {
     icon: <MapPin className="w-6 h-6" />,
     label: "Adresse",
-    value: "Peder Lagmanns gate, Tønsberg",
+    value: "Kunstnergata 15, 0150 Oslo, Norge",
     link: "https://maps.google.com"
   }];
   const hours = [{
@@ -117,19 +117,7 @@ const Contact = () => {
               </div>
 
               {/* Opening Hours */}
-              <div>
-                <h3 className="text-2xl font-semibold text-foreground mb-6 flex items-center">
-                  <Clock className="w-6 h-6 mr-3 text-primary" />
-                  Åpningstider
-                </h3>
-                
-                <div className="space-y-3">
-                  {hours.map((schedule, index) => <div key={index} className="flex justify-between items-center p-3 rounded-lg bg-muted/30">
-                      <span className="text-foreground font-medium">{schedule.day}</span>
-                      <span className="text-muted-foreground">{schedule.time}</span>
-                    </div>)}
-                </div>
-              </div>
+              
             </div>
 
             {/* Contact Form */}
@@ -197,7 +185,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="nordic-heading mb-4">Finn Vårt Studio</h2>
             <p className="nordic-subtitle">
-              Lokalisert i Tønsberg, lett tilgjengelig med offentlig transport.
+              Lokalisert i Oslos pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.
             </p>
           </div>
           
@@ -206,7 +194,7 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
                 <p className="text-foreground font-medium">Interaktivt Kart</p>
-                <p className="nordic-body">Peder Lagmanns gate, Tønsberg</p>
+                <p className="nordic-body">Kunstnergata 15, 0150 Oslo, Norge</p>
               </div>
             </div>
           </div>
