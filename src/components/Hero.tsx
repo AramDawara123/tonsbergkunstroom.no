@@ -25,9 +25,9 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Oppdag samtidskunst og kreativt uttrykk i hjertet av Norge. 
-              Vårt studio feirer møtet mellom moderne kunstnerskap og tidløs nordisk skjønnhet, 
-              og skaper rom hvor kreativiteten blomstrer.
+               Kunstrom Tønsberg et levende møtested for kunst og fellesskap.
+               Utstillinger, verksteder og gode samtaler. 
+               Kunst som møter mennesker velkommen!
             </p>
           </div>
 
