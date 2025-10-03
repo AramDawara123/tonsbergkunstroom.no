@@ -27,11 +27,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-nordic-sage" />
-                <span className="text-nordic-ash">+47 123 45 678</span>
+                <span className="text-nordic-ash">+47 92 52 48 23</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-nordic-sage" />
-                <span className="text-nordic-ash">Tonsberg, Norway</span>
+                <span className="text-nordic-ash">Peder Lagmanns gate, Tønsberg</span>
               </div>
             </div>
           </div>

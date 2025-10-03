@@ -62,12 +62,12 @@ const Contact = () => {
   }, {
     icon: <Phone className="w-6 h-6" />,
     label: "Telefon",
-    value: "+47 123 45 678",
-    link: "tel:+47123456789"
+    value: "+47 92 52 48 23",
+    link: "tel:+4792524823"
   }, {
     icon: <MapPin className="w-6 h-6" />,
     label: "Adresse",
-    value: "Kunstnergata 15, 0150 Oslo, Norge",
+    value: "Peder Lagmanns gate, Tønsberg",
     link: "https://maps.google.com"
   }];
   const hours = [{
@@ -197,7 +197,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="nordic-heading mb-4">Finn Vårt Studio</h2>
             <p className="nordic-subtitle">
-              Lokalisert i Oslos pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.
+              Lokalisert i Tønsberg, lett tilgjengelig med offentlig transport.
             </p>
           </div>
           
@@ -206,7 +206,7 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
                 <p className="text-foreground font-medium">Interaktivt Kart</p>
-                <p className="nordic-body">Kunstnergata 15, 0150 Oslo, Norge</p>
+                <p className="nordic-body">Peder Lagmanns gate, Tønsberg</p>
               </div>
             </div>
           </div>
