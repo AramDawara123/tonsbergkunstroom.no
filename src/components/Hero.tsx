@@ -1,18 +1,11 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-muted overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-muted overflow-hidden">
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80" 
-          alt="tonsbergkunstroom" 
-          className="w-full h-full object-cover opacity-30" 
-        />
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80" alt="tonsbergkunstroom" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-transparent to-primary/20" />
       </div>
 
@@ -32,16 +25,8 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link 
-              to="/gallery"
-              className="px-10 py-5 bg-gradient-to-r from-primary to-nordic-forest text-white rounded-xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Utforsk Galleri
-            </Link>
-            <Link 
-              to="/services"
-              className="px-10 py-5 bg-gradient-to-r from-secondary to-nordic-sage text-white rounded-xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            
+            <Link to="/services" className="px-10 py-5 bg-gradient-to-r from-secondary to-nordic-sage text-white rounded-xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300">
               Bli Med På Kurs
             </Link>
           </div>
@@ -68,8 +53,6 @@ const Hero = () => {
           
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
