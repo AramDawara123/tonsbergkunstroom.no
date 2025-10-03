@@ -41,7 +41,7 @@ const ArtistSection = () => {
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-nordic-charcoal via-primary to-nordic-forest bg-clip-text text-transparent">
-                  Astrid Nordström
+                  Kunstrom Tønsberg
                 </span>
               </h2>
               <div className="flex items-center gap-2 text-nordic-stone">
