@@ -21,10 +21,7 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              Hvor Kunst Møter
-              <span className="block bg-gradient-to-r from-primary to-nordic-forest bg-clip-text text-transparent">
-                Nordisk Sjel
-              </span>
+              Kunstromtonsberg
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
