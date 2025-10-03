@@ -159,45 +159,37 @@ const Services = () => {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="nordic-card border border-primary/10">
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
-                  Hvilke materialer er inkludert i kursavgiften?
+                  Hva kan jeg lære på Kunstrom Tønsberg? 
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Alle grunnleggende kunstmateriell er inkludert i kursavgiften, inkludert maling, pensler, lerret og papir. 
-                  Du trenger bare å ta med kreativiteten og entusiasmen din for å lære! For avanserte kurs tilbyr vi premiummaterialer 
-                  for å hjelpe deg oppnå profesjonelle resultater.
+                  Du kan lære maleri, grafikk, skulptur, foto og mye mer - uansett nivå.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2" className="nordic-card border border-primary/10">
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
-                  Trenger jeg tidligere kunsterfaring for å være med?
+                  Tilbyr dere kurs for barn?
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Ikke i det hele tatt! Våre nybegynnerkurs er designet for fullstendige nybegynnere innen kunst. Vi starter med grunnleggende 
-                  teknikker og bygger gradvis opp ferdighetene dine. For avanserte kurs anbefaler vi litt grunnleggende malererfaring, 
-                  men våre instruktører vil vurdere og veilede deg deretter.
+                  Ja, vi har faste kurs for barn, og egne timer for talentfulle barn som ønsker ekstra oppfølging.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-3" className="nordic-card border border-primary/10">
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
-                  Hva er avbestillings- og refusjonspolitikken deres?
+                  Må jeg ha erfaring fra før? 
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Vi tilbyr full refusjon for avbestillinger gjort 48 timer før kursstart. For avbestillinger 
-                  innen 48 timer gir vi en kreditt som kan brukes til fremtidige kurs innen 6 måneder. I tilfelle 
-                  nødsituasjoner, vennligst kontakt oss direkte for å diskutere alternativer.
+                  Nei, våre profesjonelle kunstnere kan starte med deg helt fra begynnelsen.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-4" className="nordic-card border border-primary/10">
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
-                  Hvor små er klassestørrelsene?
+                  Kan voksne også delta?
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Vi opprettholder små klassestørrelser for å sikre personlig oppmerksomhet. Våre nybegynnerklasser har maksimalt 8 studenter, 
-                  avanserte oljemaleriklasser begrenser til 6 studenter, og abstrakte uttrykksklasser tar opptil 10 studenter. 
-                  Dette lar våre instruktører gi individuell veiledning og tilbakemelding.
+                  Selvfølgelig! Vi har kurs og workshops for både voksne og barn.
                 </AccordionContent>
               </AccordionItem>
               
@@ -214,23 +206,14 @@ const Services = () => {
               
               <AccordionItem value="item-6" className="nordic-card border border-primary/10">
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold text-foreground hover:text-primary">
-                  Hvilke sikkerhetstiltak har dere på plass?
+                  Hvordan kan jeg melde meg på kurs?
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Vårt studio følger alle helse- og sikkerhetsretningslinjer. Vi sørger for riktig ventilasjon, sikkerhetsmateriell for 
-                  malinghåndtering, og opprettholder rene, sanerte arbeidsområder. Alle materialene vi bruker er ikke-giftige og trygge for 
-                  innendørs bruk. Vi har også førstehjelpsutstyr lett tilgjengelig.
+                  Du kan registrere deg via nettsiden vår eller ta direkte kontakt med oss.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            
-            <div className="text-center mt-12 relative z-10">
-              <p className="text-muted-foreground mb-6">Har du fortsatt spørsmål? Vi er her for å hjelpe!</p>
-              <Link to="/contact" className="nordic-button-primary inline-flex items-center justify-center gap-2 group/btn">
-                <span>Kontakt Oss</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+          
           </div>
         </div>
       </section>
