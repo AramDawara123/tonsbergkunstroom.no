@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-nordic-stone mt-12 pt-8 text-center">
-          <p className="text-nordic-ash">© 2025 tonsbergkunstroom. Alle rettigheter reservert. Laget med kjærlighet i Norge.</p>
+          <p className="text-nordic-ash">© 2025 Kunstrom Tønsberg. Alle rettigheter reservert. Laget med kjærlighet i Norge.</p>
         </div>
       </div>
     </footer>;
