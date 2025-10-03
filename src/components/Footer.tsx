@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Studio Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-display font-bold mb-4">tonsbergkunstroom</h3>
+            <h3 className="text-2xl font-display font-bold mb-4">Kunstrom Tønsberg</h3>
             <p className="text-nordic-ash mb-6 max-w-md">
               Skaper og deler skjønnheten av nordisk kunst i hjertet av Norge. 
               Bli med oss på en reise med kunstnerisk oppdagelse og kreativt uttrykk.
