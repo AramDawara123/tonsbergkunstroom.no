@@ -38,7 +38,7 @@ const ArtistSection = () => {
               </h2>
               <div className="flex items-center gap-2 text-nordic-stone">
                 <MapPin className="w-4 h-4" />
-                <span className="text-lg font-medium">Samtida Nordisk Kunstner</span>
+                <span className="text-lg font-medium">Peder Lagmanns gate, Tønsberg</span>
               </div>
             </div>
             
