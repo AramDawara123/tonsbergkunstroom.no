@@ -1,36 +1,29 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Emma Larsson",
-      role: "Kunstentusiast",
-      content: "Astrids nordiske kunststil har helt forvandlet hvordan jeg ser på samtidskunst. Verkene hennes bringer slik ro og dybde til hjemmet mitt.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Marcus Nielsen",
-      role: "Gallerieier",
-      content: "Å jobbe med Astrid har vært eksepsjonelt. Hennes forståelse av nordisk estetikk og moderne teknikker skaper virkelig unike verk.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Sofia Andersson",
-      role: "Kunststudent",
-      content: "Kunstkursene her er utrolige. Astrids undervisningsmetode kombinerer tradisjonelle nordiske teknikker med samtidig innovasjon.",
-      rating: 5,
-      image: "/placeholder.svg"
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-to-b from-background to-background/50 relative overflow-hidden">
+  const testimonials = [{
+    name: "Emma Larsson",
+    role: "Kunstentusiast",
+    content: "Astrids nordiske kunststil har helt forvandlet hvordan jeg ser på samtidskunst. Verkene hennes bringer slik ro og dybde til hjemmet mitt.",
+    rating: 5,
+    image: "/placeholder.svg"
+  }, {
+    name: "Marcus Nielsen",
+    role: "Gallerieier",
+    content: "Å jobbe med Astrid har vært eksepsjonelt. Hennes forståelse av nordisk estetikk og moderne teknikker skaper virkelig unike verk.",
+    rating: 5,
+    image: "/placeholder.svg"
+  }, {
+    name: "Sofia Andersson",
+    role: "Kunststudent",
+    content: "Kunstkursene her er utrolige. Astrids undervisningsmetode kombinerer tradisjonelle nordiske teknikker med samtidig innovasjon.",
+    rating: 5,
+    image: "/placeholder.svg"
+  }];
+  return <section className="py-20 bg-gradient-to-b from-background to-background/50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 nordic-texture opacity-30"></div>
-      <div className="absolute inset-0 modern-grid opacity-20"></div>
+      
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -43,14 +36,9 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="nordic-card p-8 text-center nordic-hover-lift"
-              style={{
-                animationDelay: `${index * 0.2}s`
-              }}
-            >
+          {testimonials.map((testimonial, index) => <div key={index} className="nordic-card p-8 text-center nordic-hover-lift" style={{
+          animationDelay: `${index * 0.2}s`
+        }}>
               {/* Quote Icon */}
               <div className="mb-6">
                 <Quote className="w-10 h-10 text-primary mx-auto opacity-60" />
@@ -58,12 +46,7 @@ const TestimonialsSection = () => {
 
               {/* Stars */}
               <div className="flex justify-center mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-5 h-5 text-yellow-400 fill-current" 
-                  />
-                ))}
+                {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
               </div>
 
               {/* Content */}
@@ -74,11 +57,7 @@ const TestimonialsSection = () => {
               {/* Profile */}
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 mb-4 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                 </div>
                 <h4 className="nordic-subtitle font-semibold text-foreground">
                   {testimonial.name}
@@ -87,8 +66,7 @@ const TestimonialsSection = () => {
                   {testimonial.role}
                 </p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Bottom CTA */}
@@ -106,8 +84,6 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TestimonialsSection;
