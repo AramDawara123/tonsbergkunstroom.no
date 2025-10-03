@@ -131,70 +131,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Our Courses */}
-      <section className="py-20 bg-gradient-to-br from-muted/50 to-background relative overflow-hidden">
-        
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-gradient-to-br from-accent/15 to-primary/15 blur-2xl"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <Award className="w-4 h-4" />
-                Ekspert-ledet Utdanning
-              </div>
-              
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground leading-tight">
-                Hvorfor Velge Våre 
-                <span className="nordic-gradient-text"> Kunstkurs?</span>
-              </h2>
-              
-              <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-                Våre kunstkurs er designet for å fremme kreativitet samtidig som de gir solide tekniske grunnlag. 
-                Enten du er en fullstendig nybegynner eller ønsker å foredle ferdighetene dine, vil vårt støttende miljø 
-                og ekspertveiledning hjelpe deg med å oppnå dine kunstneriske mål.
-              </p>
-
-              <div className="space-y-8 mb-12">
-                {courseFeatures.map((feature, index) => <div key={index} className="group flex items-start space-x-6 p-6 rounded-2xl bg-gradient-to-r from-white/50 to-white/30 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>)}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="nordic-button-primary group/btn">
-                  <span>Kom I Gang I Dag</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
-                <Link to="/gallery" className="nordic-button-secondary group/btn">
-                  <Palette className="w-4 h-4 mr-2" />
-                  <span>Se Studentarbeid</span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2 relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
-              <div className="relative nordic-card overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Art class in session showcasing students learning Nordic painting techniques" className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/20 transition-colors duration-500"></div>
-                
-                <div className="absolute bottom-6 left-6 right-6">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* FAQ Section */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
