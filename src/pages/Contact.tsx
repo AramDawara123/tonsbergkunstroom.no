@@ -88,71 +88,68 @@ const Contact = () => {
       
       {/* Header */}
       <PageHero>
-        <div className="text-center">
-          <h1 className="nordic-heading mb-4">Besøk Vårt Studio</h1>
-          <p className="nordic-subtitle max-w-2xl mx-auto">Lokalisert i hjertet av Tønsberg, vårt studio ønsker kunstentusiaster og studenter velkommen. Kom og opplev nordisk kreativitet på nært hold.</p>
+        <div className="text-center px-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Besøk Vårt Studio</h1>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">Lokalisert i hjertet av Tønsberg, vårt studio ønsker kunstentusiaster og studenter velkommen. Kom og opplev nordisk kreativitet på nært hold.</p>
         </div>
       </PageHero>
 
       {/* Contact Information */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Contact Details */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h2 className="nordic-heading mb-8">Ta Kontakt</h2>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8">Ta Kontakt</h2>
                 
-                <div className="space-y-6">
-                  {contactInfo.map((info, index) => <a key={index} href={info.link} className="flex items-center space-x-4 p-4 rounded-xl bg-muted/50 hover:bg-muted/80 transition-colors group">
-                      <div className="text-primary group-hover:scale-110 transition-transform">
+                <div className="space-y-4 sm:space-y-6">
+                  {contactInfo.map((info, index) => <a key={index} href={info.link} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl bg-muted/50 hover:bg-muted/80 transition-colors group">
+                      <div className="text-primary group-hover:scale-110 transition-transform flex-shrink-0">
                         {info.icon}
                       </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">{info.label}</p>
-                        <p className="text-foreground font-medium">{info.value}</p>
+                      <div className="min-w-0">
+                        <p className="text-xs sm:text-sm text-muted-foreground">{info.label}</p>
+                        <p className="text-sm sm:text-base text-foreground font-medium break-all">{info.value}</p>
                       </div>
                     </a>)}
                 </div>
               </div>
-
-              {/* Opening Hours */}
-              
             </div>
 
             {/* Contact Form */}
             <div className="nordic-card">
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">Send oss en Melding</h3>
+              <div className="p-4 sm:p-6 lg:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">Send oss en Melding</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                         Fornavn *
                       </label>
-                      <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Ditt fornavn" />
+                      <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Ditt fornavn" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                         Etternavn *
                       </label>
-                      <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Ditt etternavn" />
+                      <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Ditt etternavn" />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       E-post *
                     </label>
-                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="din.epost@eksempel.no" />
+                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="din.epost@eksempel.no" />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       Interesse
                     </label>
-                    <select name="subject" value={formData.subject} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                    <select name="subject" value={formData.subject} onChange={handleInputChange} className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
                       <option value="">Velg interesse</option>
                       <option value="Kunstkurs">Kunstkurs</option>
                       <option value="Tilpasset Bestilling">Tilpasset Bestilling</option>
@@ -163,13 +160,13 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       Melding *
                     </label>
-                    <textarea rows={4} name="message" value={formData.message} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none" placeholder="Fortell oss om din interesse for vårt studio..."></textarea>
+                    <textarea rows={4} name="message" value={formData.message} onChange={handleInputChange} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none" placeholder="Fortell oss om din interesse for vårt studio..."></textarea>
                   </div>
                   
-                  <button type="submit" className="nordic-button-primary w-full" disabled={isSubmitting}>
+                  <button type="submit" className="nordic-button-primary w-full text-sm sm:text-base py-3" disabled={isSubmitting}>
                     {isSubmitting ? 'Sender...' : 'Send Melding'}
                   </button>
                 </form>
@@ -180,17 +177,17 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="nordic-heading mb-4">Finn Vårt Studio</h2>
-            <p className="nordic-subtitle">Lokalisert i Tønsberg pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.</p>
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Finn Vårt Studio</h2>
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground px-4">Lokalisert i Tønsberg pulserende kunstdistrikt, lett tilgjengelig med offentlig transport.</p>
           </div>
           
           <div className="nordic-card overflow-hidden">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.65957725552573!2d10.406149569720704!3d59.27219159841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646b716f815349f%3A0x8b8b312a0d6a56f3!2sHertug%20Guthorms%20gate%2025A%2C%203111%20T%C3%B8nsberg%2C%20Noorwegen!5e0!3m2!1snl!2snl!4v1759529994360!5m2!1snl!2snl" width="100%" height="450" style={{
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.65957725552573!2d10.406149569720704!3d59.27219159841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646b716f815349f%3A0x8b8b312a0d6a56f3!2sHertug%20Guthorms%20gate%2025A%2C%203111%20T%C3%B8nsberg%2C%20Noorwegen!5e0!3m2!1snl!2snl!4v1759529994360!5m2!1snl!2snl" width="100%" height="350" style={{
             border: 0
-          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full" />
+          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-[300px] sm:h-[350px] md:h-[450px]" />
           </div>
         </div>
       </section>
