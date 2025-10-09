@@ -73,12 +73,7 @@ const ArtistSection = () => {
               </div>
               
               {/* Floating Stats Card */}
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white/90 dark:bg-background/90 backdrop-blur-xl rounded-xl p-4 sm:p-6 shadow-xl border border-white/20 dark:border-border">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">Mester</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Siden 2004</div>
-                </div>
-              </div>
+              
 
               {/* Floating Achievement Badge */}
               <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-gradient-to-r from-secondary to-nordic-sage text-white rounded-full p-3 sm:p-4 shadow-lg">
