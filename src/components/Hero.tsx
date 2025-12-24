@@ -1,15 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 
 const Hero = () => {
+  const { data: heroPhoto } = useQuery({
+    queryKey: ['hero-photo'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('photos')
+        .select('*')
+        .eq('show_on_home', true)
+        .order('display_order', { ascending: true })
+        .limit(1)
+        .maybeSingle();
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  const backgroundImage = heroPhoto?.image_url || 
+    "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80";
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-muted overflow-hidden">
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1997&q=80" 
-          alt="tonsbergkunstroom" 
+          src={backgroundImage}
+          alt="Kunstrom Tønsberg" 
           className="w-full h-full object-cover opacity-30" 
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-transparent to-primary/20" />

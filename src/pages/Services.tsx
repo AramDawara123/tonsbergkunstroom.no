@@ -1,61 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Palette, Users, Heart, Clock, ArrowRight, Award, BookOpen, Target, Sparkles, Star, HelpCircle } from 'lucide-react';
+import { Clock, Users, ArrowRight, Star, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import PageHero from '../components/PageHero';
+
 const Services = () => {
-  const classes = [{
-    id: 'beginners-watercolor',
-    title: "Nybegynner Akvarell",
-    duration: "2 timer",
-    capacity: "8 studenter",
-    price: "450 NOK",
-    description: "Lær grunnleggende akvarellmaling med nordiske landskapstemaer.",
-    schedule: "Lørdager 10:00-12:00"
-  }, {
-    id: 'advanced-oil-painting',
-    title: "Avansert Oljemaleri",
-    duration: "3 timer",
-    capacity: "6 studenter",
-    price: "650 NOK",
-    description: "Mestre avanserte teknikker innen oljemaleri og fargeteori.",
-    schedule: "Onsdager 14:00-17:00"
-  }, {
-    id: 'abstract-expression',
-    title: "Abstrakt Uttrykk",
-    duration: "2.5 timer",
-    capacity: "10 studenter",
-    price: "550 NOK",
-    description: "Utforsk abstrakte kunstteknikker og finn din unike kunstneriske stemme.",
-    schedule: "Søndager 13:00-15:30"
-  }];
-  const courseFeatures = [{
-    icon: <BookOpen className="w-8 h-8" />,
-    title: "Strukturert Læring",
-    description: "Progressivt pensum designet for å bygge ferdighetene dine steg for steg fra grunnleggende til avanserte teknikker."
-  }, {
-    icon: <Award className="w-8 h-8" />,
-    title: "Ekspert Instruksjon",
-    description: "Lær av profesjonelle kunstnere med års erfaring innen undervisning og skaping av nordisk-inspirert kunst."
-  }, {
-    icon: <Target className="w-8 h-8" />,
-    title: "Personlig Vekst",
-    description: "Utvikle din unike kunstneriske stemme mens du bygger selvtillit i dine kreative evner."
-  }];
-  return <div className="min-h-screen">
+  const { data: courses, isLoading } = useQuery({
+    queryKey: ['public-courses'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('courses')
+        .select('*')
+        .eq('is_active', true)
+        .order('display_order', { ascending: true });
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  return (
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Header */}
       <PageHero>
         <div className="text-center">
-          
-          
           <h1 className="nordic-heading mb-6">Sammen utvikler vi kreativitet</h1>
-          <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">Kunstrom Tønsberg er et sted som samler kunst og kreativitet. Vi har flere profesjonelle kunstnere som kan starte med deg helt fra begynnelsen og hjelpe deg å finne ditt eget kunstneriske uttrykk. I tillegg tilbyr vi faste kurs for barn og voksene, samt mulighet for egne timer for talentfulle barn eller voksen som ønsker å utvikle ferdighetene sine videre</p>
-          
-          
+          <p className="nordic-subtitle max-w-3xl mx-auto leading-relaxed animate-fade-in">
+            Kunstrom Tønsberg er et sted som samler kunst og kreativitet. Vi har flere profesjonelle kunstnere som kan starte med deg helt fra begynnelsen og hjelpe deg å finne ditt eget kunstneriske uttrykk.
+          </p>
         </div>
       </PageHero>
 
@@ -70,68 +47,118 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {classes.map((classItem, index) => <div key={index} className="group relative nordic-card nordic-hover-lift overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative p-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-accent"></div>
-                      <span className="text-sm font-medium text-primary uppercase tracking-wide">Premium Kurs</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />)}
-                    </div>
-                  </div>
+          {isLoading ? (
+            <div className="flex items-center justify-center py-12">
+              <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+            </div>
+          ) : courses && courses.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {courses.map((course) => (
+                <div key={course.id} className="group relative nordic-card nordic-hover-lift overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    {classItem.title}
-                  </h3>
+                  {course.image_url && (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={course.image_url} 
+                        alt={course.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
                   
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-muted-foreground">
-                        <Clock className="w-5 h-5 mr-3 text-primary" />
-                        <span className="font-medium">{classItem.duration}</span>
+                  <div className="relative p-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-accent"></div>
+                        <span className="text-sm font-medium text-primary uppercase tracking-wide">Premium Kurs</span>
                       </div>
-                      <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                        {classItem.schedule.split(' ')[0]}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-muted-foreground">
-                        <Users className="w-5 h-5 mr-3 text-primary" />
-                        <span className="font-medium">Maks {classItem.capacity}</span>
-                      </div>
-                      <div className="text-2xl font-bold text-primary">
-                        {classItem.price}
+                      <div className="flex items-center space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
+                        ))}
                       </div>
                     </div>
-                  </div>
+                    
+                    <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {course.title}
+                    </h3>
+                    
+                    <div className="space-y-4 mb-6">
+                      {course.duration && (
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center text-muted-foreground">
+                            <Clock className="w-5 h-5 mr-3 text-primary" />
+                            <span className="font-medium">{course.duration}</span>
+                          </div>
+                          {course.schedule && (
+                            <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                              {course.schedule.split(' ')[0]}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      <div className="flex items-center justify-between">
+                        {course.max_participants && (
+                          <div className="flex items-center text-muted-foreground">
+                            <Users className="w-5 h-5 mr-3 text-primary" />
+                            <span className="font-medium">Maks {course.max_participants} studenter</span>
+                          </div>
+                        )}
+                        {course.price && (
+                          <div className="text-2xl font-bold text-primary">
+                            {course.price} NOK
+                          </div>
+                        )}
+                      </div>
+                    </div>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{classItem.description}</p>
-                  
-                  <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-primary/10">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4 mr-2 text-primary" />
-                      <span className="font-medium">{classItem.schedule}</span>
-                    </div>
-                  </div>
+                    {course.short_description && (
+                      <p className="text-muted-foreground mb-6 leading-relaxed">{course.short_description}</p>
+                    )}
+                    
+                    {course.schedule && (
+                      <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-primary/10">
+                        <div className="flex items-center text-sm text-muted-foreground">
+                          <Clock className="w-4 h-4 mr-2 text-primary" />
+                          <span className="font-medium">{course.schedule}</span>
+                        </div>
+                      </div>
+                    )}
 
-                  <Link to={`/course/${classItem.id}`} className="nordic-button-primary w-full text-center inline-flex items-center justify-center gap-2 group/btn">
-                    <span>Meld Deg På Nå</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
+                    <Link 
+                      to={`/course/${course.id}`} 
+                      className="nordic-button-primary w-full text-center inline-flex items-center justify-center gap-2 group/btn"
+                    >
+                      <span>Meld Deg På Nå</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
-              </div>)}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="nordic-card p-12 text-center max-w-2xl mx-auto">
+              <div className="mb-6">
+                <svg className="w-24 h-24 mx-auto text-muted-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Ingen Kurs Tilgjengelig</h3>
+              <p className="text-muted-foreground text-lg mb-8">
+                Det er ingen kurs tilgjengelig for øyeblikket. Vennligst sjekk tilbake snart!
+              </p>
+              <Link 
+                to="/contact"
+                className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all duration-300"
+              >
+                Kontakt Oss
+              </Link>
+            </div>
+          )}
         </div>
       </section>
-
-      {/* Why Choose Our Courses */}
-      
 
       {/* FAQ Section */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
@@ -199,8 +226,7 @@ const Services = () => {
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
                   Ja! Vi tilbyr enkeltøkt prøveklasser for 300 NOK, som kan krediteres mot din fulle kursavgift 
-                  hvis du bestemmer deg for å fortsette. Dette er en flott måte å oppleve vår undervisningsstil og studioatmosfære 
-                  før du forplikter deg til det fulle programmet.
+                  hvis du bestemmer deg for å fortsette.
                 </AccordionContent>
               </AccordionItem>
               
@@ -209,16 +235,17 @@ const Services = () => {
                   Hvordan kan jeg melde meg på kurs?
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Du kan registrere deg via nettsiden vår eller ta direkte kontakt med oss.
+                  Du kan registrere deg via nettsiden vår eller ta direkte kontakt med oss.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Services;
