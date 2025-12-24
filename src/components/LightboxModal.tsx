@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 
 interface Artwork {
-  id: number;
+  id: number | string;
   title: string;
   category: string;
   year: string;
